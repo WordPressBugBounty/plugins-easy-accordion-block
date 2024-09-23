@@ -1,0 +1,1 @@
+# plugins-easy-accordion-block
