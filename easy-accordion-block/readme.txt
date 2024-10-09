@@ -3,7 +3,7 @@ Contributors: binsaifullah
 Tags: Accordion, FAQs, Gutenberg Block, accordion block, faq block, faq, faqs
 Requires at least: 6.0
 Tested up to: 6.6.2
-Stable tag: 1.2.4
+Stable tag: 1.2.5
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -64,7 +64,7 @@ Yes, you can use it with any theme. It is compatible with most of the themes. I 
 
 == Changelog ==
 
-= 1.2.4 =
+= 1.2.5 =
 * Compatibility with WordPress 6.6.2 
 
 = 1.2.3 =

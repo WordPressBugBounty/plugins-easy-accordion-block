@@ -4,7 +4,7 @@
  * Description:       A custom Gutenberg Block developed with Gutenberg Native Components.
  * Requires at least: 6.0
  * Requires PHP:      7.0
- * Version:           1.2.4
+ * Version:           1.2.5
  * Author:            Zakaria Binsaifullah
  * Author URI:        https://makegutenblock.com
  * License:           GPL v2 or later
@@ -77,7 +77,7 @@ final class ESAB_BLOCKS_CLASS {
 	 * Define the plugin constants
 	 */
 	private function esab_define_constants() {
-		define( 'ESAB_VERSION', '1.2.4' );
+		define( 'ESAB_VERSION', '1.2.5' );
 		define( 'ESAB_URL', plugin_dir_url( __FILE__ ) );
 		define( 'ESAB_LIB_URL', ESAB_URL . 'includes/' );		
 	}
