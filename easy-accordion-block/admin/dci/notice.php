@@ -8,11 +8,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! function_exists( 'dci_popup_notice' ) ) {
-	function dci_popup_notice() {
+	function dci_popup_notice( $data ) {
+
 		?>
 		<div class="dci-notice">
 			<div class="dci-notice-wrapper">
 				<div class="dci-header">
+					<!-- <div class="dci-logo">
+				<img src="plugins_url( 'assets/images/logo.png', __FILE__ );" alt="logo">
+						</div> -->
 					<h2 class="dci-title">
 						<?php esc_html_e( 'Never miss an important update.', 'data-collector-insights' ); ?>
 					</h2>
@@ -21,8 +25,18 @@ if ( ! function_exists( 'dci_popup_notice' ) ) {
 					</p>
 				</div>
 				<div class="dci-actions">
-					<form method="get">
-						<input type="hidden" name="page" value="<?php //echo esc_attr( $_GET['page'] ); ?>">
+					<?php
+					$dci_name       = isset( $data['name'] ) ? $data['name'] : '';
+					$dci_date_name  = isset( $data['date_name'] ) ? $data['date_name'] : '';
+					$dci_allow_name = isset( $data['allow_name'] ) ? $data['allow_name'] : '';
+					$nonce          = isset( $data['nonce'] ) ? $data['nonce'] : '';
+					?>
+					<form method="get" class="dci-notice-data">
+						<input type="hidden" name="dci_name" value="<?php echo esc_html( $dci_name ); ?>">
+						<input type="hidden" name="dci_date_name" value="<?php echo esc_html( $dci_date_name ); ?>">
+						<input type="hidden" name="dci_allow_name" value="<?php echo esc_html( $dci_allow_name ); ?>">
+						<input type="hidden" name="nonce" value="<?php echo esc_html( $nonce ); ?>">
+
 						<button id="dci_allow_yes" name="dci_allow_status" value="yes" type="button"
 							class="dci-button-allow button button-primary">
 							<?php esc_html_e( 'Allow & Continue', 'data-collector-insights' ); ?>
@@ -92,5 +106,5 @@ if ( ! function_exists( 'dci_popup_notice' ) ) {
 		<?php
 	}
 
-	add_action( 'in_admin_header', 'dci_popup_notice', 99999 );
+	// add_action( 'in_admin_header', 'dci_popup_notice', 99999 );
 }

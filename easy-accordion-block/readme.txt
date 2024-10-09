@@ -2,8 +2,8 @@
 Contributors: binsaifullah
 Tags: Accordion, FAQs, Gutenberg Block, accordion block, faq block, faq, faqs
 Requires at least: 6.0
-Tested up to: 6.6.1
-Stable tag: 1.2.3
+Tested up to: 6.6.2
+Stable tag: 1.2.4
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,10 +63,16 @@ Yes, you can use it with any theme. It is compatible with most of the themes. I 
 
 
 == Changelog ==
+
+= 1.2.4 =
+* Compatibility with WordPress 6.6.2 
+
 = 1.2.3 =
 * Compatibility with WordPress 6.6.1
+
 = 1.2.2 =
 * Fixed: tabindex Accessibility 
+
 = 1.2.1 =
 * Fixed: Accordion Initial Editor style issues
 * Update: Version compatible with WordPress 6.4.x 

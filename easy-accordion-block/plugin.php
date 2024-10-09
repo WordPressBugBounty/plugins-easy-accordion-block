@@ -4,7 +4,7 @@
  * Description:       A custom Gutenberg Block developed with Gutenberg Native Components.
  * Requires at least: 6.0
  * Requires PHP:      7.0
- * Version:           1.2.3
+ * Version:           1.2.4
  * Author:            Zakaria Binsaifullah
  * Author URI:        https://makegutenblock.com
  * License:           GPL v2 or later
@@ -77,7 +77,7 @@ final class ESAB_BLOCKS_CLASS {
 	 * Define the plugin constants
 	 */
 	private function esab_define_constants() {
-		define( 'ESAB_VERSION', '1.2.3' );
+		define( 'ESAB_VERSION', '1.2.4' );
 		define( 'ESAB_URL', plugin_dir_url( __FILE__ ) );
 		define( 'ESAB_LIB_URL', ESAB_URL . 'includes/' );		
 	}
@@ -216,20 +216,36 @@ if ( ! function_exists( 'esab_plugin_easy_accordion_block' ) ) {
 
 		// Include DCI SDK.
 		require_once dirname( __FILE__ ) . '/admin/dci/start.php';
+		wp_register_style('dci-sdk-easy_accordion_block', plugins_url('admin/dci/assets/css/dci.css', __FILE__), array(), '1.2.1', 'all');
+        wp_enqueue_style('dci-sdk-easy_accordion_block');
+
 
 		dci_dynamic_init( array(
-			'sdk_version'  => '1.0.0',
-			'plugin_title' => 'Easy Accordion Block',
-			'product_id'   => 6,
-			'api_endpoint' => 'https://dashboard.gutenbergkits.com/wp-json/dci/v1/data-insights',
-			'slug'         => 'your-product-slug',
-			'public_key'   => 'pk_2zPuK3VzDOtZ2HEZuT9zBFUu8d2iQw3z',
-			'is_premium'   => false,
-			'menu'         => array(
+			'sdk_version'          => '1.2.1',
+			'product_id'           => 6,
+			'plugin_name'          => 'Easy Accordion Block',                                          // make simple, must not empty
+			'plugin_title'         => 'Easy Accordion Block',                                          // You can describe your plugin title here
+			'api_endpoint'         => 'https://dashboard.codedivo.com/wp-json/dci/v1/data-insights',
+			'slug'                 => 'easy-accordion-block',                                          // write 'no-need' if you don't want to use
+			'core_file'            => false,
+			'plugin_deactivate_id' => false,
+			'menu'                 => array(
 				'slug' => 'esab-accordion',
 			),
+			'public_key'          => 'pk_2zPuK3VzDOtZ2HEZuT9zBFUu8d2iQw3z',
+			'is_premium'          => false,
+			'popup_notice'        => false,
+			'deactivate_feedback' => false,
+			'delay_time'          => [ 
+				'time' => 3 * DAY_IN_SECONDS,
+			],
+			'text_domain' => 'easy-accordion-block',
+			'plugin_msg'  => '
+				<p>Thank you for using <strong>Easy Accordion Block</strong>! We hope you enjoy using it. If you love <strong>Easy Accordion Block</strong>, please consider leaving us a 5-star review on <a href="https://wordpress.org/support/plugin/easy-accordion-block/reviews/#new-post" target="_blank">WordPress</a> to help us spread the word. </p>
+                <We>Also, if you need any help, feel free to contact us via our <a href="https://gutenbergkits.com/contact/" target="_blank">support forum</a>. We are always here to help you. We collect some data to improve our product.</p>
+			',
 		) );
 
 	}
-	add_action( 'plugins_loaded', 'esab_plugin_easy_accordion_block' );
+	add_action( 'admin_init', 'esab_plugin_easy_accordion_block' );
 }
