@@ -1,17 +1,23 @@
 <?php 
-namespace ESAB\Plugin;
-use ESAB\Trait\Instance;
-
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-if( ! class_exists( 'Category' ) ) {
+if( ! class_exists( 'Esab_Category' ) ) {
 
-    class Category {
+    class Esab_Category {
 
-        use Instance;
 
+        /**
+         * Instance of the class
+         *
+         * @var null
+         */
+        private static $instance = null;
+
+        /**
+         * Constructor
+         */
         public function __construct() {
             add_filter( 'block_categories_all', [ $this, 'register_category' ], 10, 2 );
         }
@@ -34,6 +40,18 @@ if( ! class_exists( 'Category' ) ) {
             );
         }
 
+        /**
+         * Instance of the class
+         */
+        public static function instance() {
+            if ( is_null( self::$instance ) ) {
+                self::$instance = new self();
+            }
+            return self::$instance;
+        }
+
     }
+
+    Esab_Category::instance(); // Initialize the class
 
 }

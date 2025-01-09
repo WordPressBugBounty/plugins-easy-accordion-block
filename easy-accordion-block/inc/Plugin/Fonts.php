@@ -1,22 +1,29 @@
 <?php
-
-namespace ESAB\Plugin;
-use ESAB\Trait\Instance;
-
+/**
+ * Load Google Fonts
+ *
+ * @package Easy_Accordion_Block
+ */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( ! class_exists( 'Fonts' ) ) {
+if ( ! class_exists( 'Esab_Fonts' ) ) {
 
 	/**
 	 * Load Google Fonts
 	 *
 	 * @since 1.0.0
 	 */
-	class Fonts {
+	class Esab_Fonts {
 
-        use Instance;
+        /**
+         * Instance of the class
+         *
+         * @var null
+         */
+        private static $instance = null;
+
 
 		/**
 		 * All fonts
@@ -115,5 +122,17 @@ if ( ! class_exists( 'Fonts' ) ) {
 				}
 			}
 		}
+
+		/**
+         * Instance of the class
+         */
+        public static function instance() {
+            if ( is_null( self::$instance ) ) {
+                self::$instance = new self();
+            }
+            return self::$instance;
+        }
 	}
+
+	Esab_Fonts::instance(); // Initialize the class.
 }

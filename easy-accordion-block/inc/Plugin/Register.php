@@ -1,17 +1,28 @@
 <?php 
-namespace ESAB\Plugin;
-use ESAB\Trait\Instance;
-
+/**
+ * Register Blocks
+ * 
+ * @package Easy_Accordion_Block
+ */
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-if( ! class_exists( 'Register' ) ) {
+if( ! class_exists( 'Esab_Register' ) ) {
 
-    class Register {
+    class Esab_Register {
 
-        use Instance;
+        /**
+         * Instance of the class
+         *
+         * @var null
+         */
+        private static $instance = null;
 
+
+        /**
+         * Constructor
+         */
         public function __construct() {
             add_action( 'init', [ $this, 'register_block' ] );
 
@@ -35,6 +46,18 @@ if( ! class_exists( 'Register' ) ) {
 			}
         }
 
+        /**
+         * Instance of the class
+         */
+        public static function instance() {
+            if ( is_null( self::$instance ) ) {
+                self::$instance = new self();
+            }
+            return self::$instance;
+        }
+
     }
+
+    Esab_Register::instance(); // Initialize the class
 
 }

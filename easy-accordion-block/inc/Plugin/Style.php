@@ -1,17 +1,25 @@
 <?php
-namespace ESAB\Plugin;
-use ESAB\Trait\Instance;
-
+/**
+ * Initialize all necessary classes and functions
+ */
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-if( ! class_exists( 'Style' ) ) {
+if( ! class_exists( 'Esab_Style' ) ) {
 
-    class Style {
+    class Esab_Style {
 
-        use Instance;
+        /**
+         * Instance of the class
+         *
+         * @var null
+         */
+        private static $instance = null;
 
+        /**
+         * Constructor
+         */
         public function __construct() {
             add_filter( 'render_block_esab/accordion', [ $this, 'generate_style' ], 10, 2 );
             // editor css
@@ -141,6 +149,18 @@ if( ! class_exists( 'Style' ) ) {
             wp_enqueue_style( 'esab-accordion-editor', ESAB_URL . 'css/editor.css', [], ESAB_VERSION );
         }
 
+        /**
+         * Instance of the class
+         */
+        public static function instance() {
+            if ( is_null( self::$instance ) ) {
+                self::$instance = new self();
+            }
+            return self::$instance;
+        }
+
     }
+
+    Esab_Style::instance(); // Initialize the class
 
 }

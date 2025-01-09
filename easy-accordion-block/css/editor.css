@@ -20,10 +20,10 @@ button.esab__add-accordion:hover {
     border-left-width: 0;
     border-right-width: 0;
     border-bottom-width: 0;
-    display: none;
+    /* display: none; */
 }
 
-.wp-block-esab-accordion .esab__body.esab__active {
+/* .wp-block-esab-accordion .esab__body.esab__active {
     display: block;
 }
 
@@ -37,4 +37,4 @@ button.esab__add-accordion:hover {
 
 .esab__icon.esab__active_icon .esab__expand {
     display: flex;
-}
+} */

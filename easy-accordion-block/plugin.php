@@ -4,7 +4,7 @@
  * Description:       A custom Gutenberg Block developed with Gutenberg Native Components.
  * Requires at least: 6.0
  * Requires PHP:      7.4
- * Version:           1.3.0
+ * Version:           1.3.1
  * Author:            Zakaria Binsaifullah
  * Author URI:        https://makegutenblock.com
  * License:           GPL v2 or later
@@ -18,10 +18,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// require autoload file
-require_once plugin_dir_path( __FILE__ ) . 'autoload-config-psr4.php';
-use ESAB\Admin\Admin;
-use ESAB\Plugin\Accordion;
 
 if( ! class_exists( 'Esab_Accordion_Block' ) ) {
 
@@ -30,7 +26,7 @@ if( ! class_exists( 'Esab_Accordion_Block' ) ) {
 		/**
 		 * Plugin Version
 		 */
-		const VERSION = '1.3.0';
+		const VERSION = '1.3.1';
 
 		// instance
 		protected static $instance = null;
@@ -75,16 +71,8 @@ if( ! class_exists( 'Esab_Accordion_Block' ) ) {
 		 * Initialize the plugin
 		 */
 		public function init() {
-
-			// admin
-			if( class_exists( 'ESAB\Admin\Admin' ) ) {
-				Admin::instance();
-			}
-
-			// accordion
-			if(  class_exists( 'ESAB\Plugin\Accordion' ) ) {
-				Accordion::instance();
-			}
+			require_once ESAP_PATH . 'inc/Admin/Admin.php';
+			require_once ESAP_PATH . 'inc/Plugin/Accordion.php';
 		}
 
 		/**

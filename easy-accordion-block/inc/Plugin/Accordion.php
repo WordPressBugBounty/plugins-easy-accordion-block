@@ -2,34 +2,52 @@
 /**
  * Initialize all necessary classes and functions
  */
-namespace ESAB\Plugin;
-use ESAB\Trait\Instance;
-use ESAB\Plugin\Category;
-use ESAB\Plugin\Register;
-use ESAB\Plugin\Style;
-use ESAB\Plugin\Fonts;
 
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-if( ! class_exists( 'Accordion' ) ) {
+if( ! class_exists( 'Esab_Accordion' ) ) {
 
-    class Accordion {
+    class Esab_Accordion {
+        
+        /**
+         * Instance of the class
+         *
+         * @var null
+         */
+        private static $instance = null;
 
-        use Instance;
-
+        /**
+         * Constructor
+         */
         public function __construct() {
-            // Category
-            Category::instance();
-            // Register
-            Register::instance(); 
-            // Style
-            Style::instance();
-            // Fonts
-            Fonts::instance();
+            $this->includes();
+        }
+
+
+        /**
+         * Instance of the class
+         */
+        public static function instance() {
+            if ( is_null( self::$instance ) ) {
+                self::$instance = new self();
+            }
+            return self::$instance;
+        }
+
+        /**
+         * Include all necessary files
+         */
+        public function includes() {
+            require_once ESAP_PATH . 'inc/Plugin/Category.php';
+            require_once ESAP_PATH . 'inc/Plugin/Fonts.php';
+            require_once ESAP_PATH . 'inc/Plugin/Register.php';
+            require_once ESAP_PATH . 'inc/Plugin/Style.php';
         }
         
     }
+
+    Esab_Accordion::instance(); // Initialize the class
     
 }

@@ -1,8 +1,9 @@
 <?php
-
-namespace ESAB\Admin;
-use ESAB\Trait\Instance;
-
+/**
+ * Admin Page Handler
+ * 
+ * @package Easy_Accordion_Block
+ */
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
@@ -10,9 +11,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Admin Page Handler
  */
-class Admin {
+class Esab_Admin {
 
-    use Instance;
+    /**
+     * Instance of the class
+     *
+     * @var null
+     */
+    private static $instance = null;
+
 
     /**
      * Constructor
@@ -187,5 +194,16 @@ class Admin {
             'plugin_msg'          => '<p>Be Top-contributor by sharing non-sensitive plugin data and create an impact to the global WordPress community today! You can receive valuable emails periodically.</p>',
         ) );
     }
-              
+         
+    /**
+     * Instance of the class
+     */
+    public static function instance() {
+        if ( is_null( self::$instance ) ) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
 }
+
+Esab_Admin::instance(); // Initialize the class
