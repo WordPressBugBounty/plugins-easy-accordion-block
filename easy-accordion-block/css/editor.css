@@ -20,7 +20,7 @@ button.esab__add-accordion:hover {
     border-left-width: 0;
     border-right-width: 0;
     border-bottom-width: 0;
-    /* display: none; */
+    display: block !important;
 }
 
 /* .wp-block-esab-accordion .esab__body.esab__active {
