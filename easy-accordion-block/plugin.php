@@ -4,7 +4,7 @@
  * Description:       A custom Gutenberg Block developed with Gutenberg Native Components.
  * Requires at least: 6.0
  * Requires PHP:      7.4
- * Version:           1.3.2
+ * Version:           1.3.3
  * Author:            Zakaria Binsaifullah
  * Author URI:        https://makegutenblock.com
  * License:           GPL v2 or later
@@ -26,7 +26,7 @@ if( ! class_exists( 'Esab_Accordion_Block' ) ) {
 		/**
 		 * Plugin Version
 		 */
-		const VERSION = '1.3.2';
+		const VERSION = '1.3.3';
 
 		// instance
 		protected static $instance = null;

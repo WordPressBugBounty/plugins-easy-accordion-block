@@ -3,7 +3,7 @@ Contributors: gkits, binsaifullah, milon0,jafor2, mehedi3, jobyaer23
 Tags: Accordion, FAQs, accordion block, faq block, gutenberg block
 Requires at least: 6.0
 Tested up to: 6.7.1
-Stable tag: 1.3.2
+Stable tag: 1.3.3
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -93,6 +93,11 @@ Yes, you can easily use your theme’s color palette for a consistent design acr
 == Screenshots ==
 
 == Changelog ==
+= 1.3.3 =
+* Added: Border Radius for header and content, margin for content
+* Added: Option to override style for nested accordion
+* Added: Hover style option for item, title, header
+
 = 1.3.2 =
 * Fixed: SVG icon color issue
 = 1.3.1 = 
