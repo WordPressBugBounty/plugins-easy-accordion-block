@@ -26,7 +26,13 @@
     "esab/headingTag": "headingTag",
     "esab/iconPosition": "iconPosition",
     "esab/collapsedIcon": "collapsedIcon",
-    "esab/expandedIcon": "expandedIcon"
+    "esab/expandedIcon": "expandedIcon",
+    "esab/enableBadge": "enableBadge",
+    "esab/enableSubHeading": "enableSubHeading",
+    "esab/subHeadingTag": "subHeadingTag",
+    "esab/shVisibleOn": "shVisibleOn",
+    "esab/badgeVPosition": "badgeVPosition",
+    "esab/badgeHPosition": "badgeHPosition"
   },
   "textdomain": "easy-accordion-block",
   "editorScript": "file:./index.js",

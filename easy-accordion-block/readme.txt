@@ -1,42 +1,67 @@
-=== Easy Accordion Gutenberg Block ===
-Contributors: gkits, binsaifullah, milon0,jafor2, mehedi3, jobyaer23
+=== Easy Accordion Block ===
+Contributors: gkits, binsaifullah, milon0, jafor2, jobyaer23
 Tags: Accordion, FAQs, accordion block, faq block, gutenberg block
-Requires at least: 6.0
+Requires at least: 6.6
 Tested up to: 6.7.1
-Stable tag: 1.3.3
+Stable tag: 1.3.4
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Easy Accordion Gutenberg Block is a custom Gutenberg Block developed with Gutenberg Native components to create an accordion or a FAQ section easily.
+Easy Accordion Block allows you to create an accordion or a FAQs section in Gutenberg editor easily.
 
 == Description ==
 
-Easy Accordion Gutenberg Block is a custom Gutenberg Block developed with Gutenberg Native components to create an accordion or a FAQ section easily. You don't need to have any coding knowledge. It is fast and light-weight. It only loads scripts on the pages where the block is used. It is highly customizable. You can use it with any theme. It is compatible with any of the WordPress themes.
+# Easy Accordion Block – Create Stunning & Responsive Accordions Effortlessly  
 
-**[Demo](https://accordion.gutenbergkits.com/demos)** | **[Get Pro](https://accordion.gutenbergkits.com/pricing)**
+**Easy Accordion Block** is a lightweight and powerful **Gutenberg block** that allows you to create beautiful **accordion sections** or **FAQ sections** without writing a single line of code! Built with **Gutenberg native components**, this block ensures seamless integration with the WordPress block editor and works flawlessly with any WordPress theme.  
+
+🌟 **[View Demo](https://accordion.gutenbergkits.com/demos)** | **[Get Pro Version](https://accordion.gutenbergkits.com/pricing)**
 
 ### Video Tutorial 
 [youtube http://www.youtube.com/watch?v=Hh3LNLpwzX4]
 
-### Key Features
-* Simple, light-weight, and fast
-* **Load scripts only on the pages where the block is used**
-* **Developed with Gutenberg Native Components**
-* **Single and Multiple accordion items opened at a time**
-* **Allow to close all accordion items**
-* **Add any block/content as Accordion Content**
-* **Keep accordion active on load**
-* **Nested Accordion**
-* Simple drag and drop using
-* **50+ SVG icons for active & inactive accordion**
-* Highly Customizable
-* Clean & smart customization panels
-* **Styles for active accordion**
-* Use theme colors pallete
-* Custom Margin, Padding, and Colors option
-* **Unlimited accordion items**
-* Accessibility enabled
+## 🚀 Why Choose Easy Accordion Block?  
+✅ **Fast & Lightweight** – Loads scripts only on pages where the block is used, ensuring better performance.  
+✅ **Highly Customizable** – Adjust the accordion’s design, colors, icons, and layout to match your website’s aesthetics.  
+✅ **No Coding Required** – Drag, drop, and customize accordion items effortlessly within the block editor.  
+✅ **Works with Any Theme** – Fully compatible with all WordPress themes.  
+✅ **SEO & Accessibility Friendly** – Designed with best practices for performance and user experience.  
+
+## ✨ Key Features  
+- **Single & Multiple Accordion Items Opened at Once** – Control how accordion items behave.  
+- **Keep Accordion Active on Load** – Set default open items for better user interaction.  
+- **Allow Closing All Accordion Items** – Users can collapse all accordions for a cleaner view.  
+- **Nested Accordion Support** – Create multi-level accordions effortlessly.  
+- **Customizable Icons** – Choose from **100+ SVG icons** for active and inactive states.  
+- **Add Any Block as Accordion Content** – Embed images, videos, or even other blocks inside accordion items.  
+- **Smart Styling Options** – Adjust **colors, margins, padding**, and use **theme color palettes** for seamless design integration.  
+- **Unlimited Accordion Items** – Add as many accordions as you need.  
+- **Fully Responsive** – Looks great on **desktop, tablet, and mobile** devices.  
+- **Accessibility Enabled** – Ensures a better user experience for all visitors.  
+
+Whether you're building **FAQs, product feature sections, or collapsible content areas**, **Easy Accordion Block** makes it simple and efficient.  
+
+👉 **Download now and start creating beautiful accordions in seconds!**
+
+### 🌟 Pro Features
+- Schema Markup
+- Badge
+- Image Accordion
+- Load More
+- Search
+- All Open/Close
+- Linked
+- Disable Accordion
+- QA Style
+- Content Folding
+- 3 Activator Events (Click, Hover, Autoplay)
+- Check List Layout
+- Step Layout
+- Sub heading
+- Heading icon
+- Header Bar
+- Custom Icon/Image
 
 == Installation ==
 

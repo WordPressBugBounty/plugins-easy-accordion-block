@@ -36,12 +36,27 @@ if( ! class_exists( 'Esab_Register' ) ) {
          */
         public function register_block() {
             $blocks = [
-                'accordion'
+                [
+                    'name' => 'accordion',
+                    'is_pro' => false
+                ],
+                [
+                    'name' => 'faqs',
+                    'is_pro' => true
+                ]
             ];
 
             if ( ! empty( $blocks ) and is_array( $blocks ) ) {
 				foreach ( $blocks as $block ) {
-					register_block_type( trailingslashit( ESAP_PATH ) . '/build/blocks/' . $block );
+
+                    // if is_pro is true then check if the Esabp_Accordion_Block_Pro class exists or not and use ESABP_PATH constant
+                    if ( $block['is_pro'] ) {
+                        if ( class_exists( 'Esabp_Accordion_Block_Pro' ) ) {
+                            register_block_type( trailingslashit( ESABP_PATH ) . '/build/blocks/' . $block['name'] );
+                        }
+                    } else {
+					    register_block_type( trailingslashit( ESAB_PATH ) . '/build/blocks/' . $block['name'] );
+                    }
 				}
 			}
         }

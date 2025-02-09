@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name:       Easy Accordion Gutenberg Block
- * Description:       A custom Gutenberg Block developed with Gutenberg Native Components.
- * Requires at least: 6.0
+ * Plugin Name:       Easy Accordion Block
+ * Description:       Create beautiful accordions in the Gutenberg editor.
+ * Requires at least: 6.6
  * Requires PHP:      7.4
- * Version:           1.3.3
- * Author:            Zakaria Binsaifullah
- * Author URI:        https://makegutenblock.com
+ * Version:           1.3.4
+ * Author:            Gutenbergkits Team
+ * Author URI:        https://gutenbergkits.com
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       easy-accordion-block
@@ -26,7 +26,7 @@ if( ! class_exists( 'Esab_Accordion_Block' ) ) {
 		/**
 		 * Plugin Version
 		 */
-		const VERSION = '1.3.3';
+		const VERSION = '1.3.4';
 
 		// instance
 		protected static $instance = null;
@@ -56,7 +56,7 @@ if( ! class_exists( 'Esab_Accordion_Block' ) ) {
 			$constants = [
 				'ESAB_VERSION' => self::VERSION,
 				'ESAB_URL'     => plugin_dir_url( __FILE__ ),
-				'ESAP_PATH'    => plugin_dir_path( __FILE__ ),
+				'ESAB_PATH'    => plugin_dir_path( __FILE__ ),
 				'ESAB_LIB_URL' => plugin_dir_url( __FILE__ ) . 'includes/',
 			];
 
@@ -71,8 +71,8 @@ if( ! class_exists( 'Esab_Accordion_Block' ) ) {
 		 * Initialize the plugin
 		 */
 		public function init() {
-			require_once ESAP_PATH . 'inc/Admin/Admin.php';
-			require_once ESAP_PATH . 'inc/Plugin/Accordion.php';
+			require_once ESAB_PATH . 'inc/Admin/Admin.php';
+			require_once ESAB_PATH . 'inc/Plugin/Accordion.php';
 		}
 
 		/**
