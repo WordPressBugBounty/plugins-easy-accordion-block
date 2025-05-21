@@ -32,7 +32,8 @@
     "esab/subHeadingTag": "subHeadingTag",
     "esab/shVisibleOn": "shVisibleOn",
     "esab/badgeVPosition": "badgeVPosition",
-    "esab/badgeHPosition": "badgeHPosition"
+    "esab/badgeHPosition": "badgeHPosition",
+    "esab/enableHeadingIcon": "enableHeadingIcon"
   },
   "textdomain": "easy-accordion-block",
   "editorScript": "file:./index.js",

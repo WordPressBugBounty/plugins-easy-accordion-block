@@ -41,6 +41,10 @@ if( ! class_exists( 'Esab_Register' ) ) {
                     'is_pro' => false
                 ],
                 [
+                    'name'=>'unfold',
+                    'is_pro'=>true
+                ],
+                [
                     'name' => 'faqs',
                     'is_pro' => true
                 ]

@@ -4,7 +4,7 @@
  * Description:       Create beautiful accordions in the Gutenberg editor.
  * Requires at least: 6.6
  * Requires PHP:      7.4
- * Version:           1.3.6
+ * Version:           1.3.7
  * Author:            Gutenbergkits Team
  * Author URI:        https://gutenbergkits.com
  * License:           GPL v2 or later
@@ -26,7 +26,7 @@ if( ! class_exists( 'Esab_Accordion_Block' ) ) {
 		/**
 		 * Plugin Version
 		 */
-		const VERSION = '1.3.6';
+		const VERSION = '1.3.7';
 
 		// instance
 		protected static $instance = null;
