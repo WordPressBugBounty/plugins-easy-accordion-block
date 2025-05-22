@@ -3,7 +3,7 @@ Contributors: gkits, binsaifullah, milon0, jafor2, jobyaer23
 Tags: Accordion, FAQs, accordion block, faq block, gutenberg block
 Requires at least: 6.6
 Tested up to: 6.8
-Stable tag: 1.3.7
+Stable tag: 1.3.8
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -118,6 +118,9 @@ Yes, you can easily use your theme’s color palette for a consistent design acr
 == Screenshots ==
 
 == Changelog ==
+= 1.3.8 =
+* Fixed: Uncaught TypeError: Cannot read properties of undefined (reading 'length')
+
 = 1.3.7 =
 * Making compatible with WordPress 6.8 & new pro block
 
