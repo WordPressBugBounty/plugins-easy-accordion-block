@@ -27,16 +27,16 @@ if( ! class_exists( 'Esab_Category' ) ) {
          * 
          * @return void
          */
-        public function register_category( $categories ) {
+        public function register_category( $categories, $post ) {
             return array_merge(
+                $categories,
                 [
                     [
                         'slug'  => 'esab-blocks',
                         'title' => __( 'Accordion', 'easy-accordion-block' ),
                         'icon'  => null,
                     ],
-                ],
-                $categories
+                ]
             );
         }
 

@@ -1,9 +1,9 @@
 === Easy Accordion Block ===
-Contributors: gkits, binsaifullah, milon0, jafor2, jobyaer23
+Contributors: binsaifullah
 Tags: Accordion, FAQs, accordion block, faq block, gutenberg block
 Requires at least: 6.6
-Tested up to: 6.8
-Stable tag: 1.3.9
+Tested up to: 6.9
+Stable tag: 1.4.5
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -118,8 +118,27 @@ Yes, you can easily use your theme’s color palette for a consistent design acr
 == Screenshots ==
 
 == Changelog ==
+
+= 1.4.5 =
+* Fixed: CSS sanitization issue is fixed
+
+= 1.4.4 = 
+* CSS output is escaped properly
+
+= 1.4.3 = 
+* Updated for wp review 
+
+= 1.4.2 =
+* assets load optimized for classic & hybrid theme
+
+= 1.4.1 = 
+* Subheading and heading icon issues are fixed 
+
+= 1.4.0 =
+* Compatibility check with the latest pro version 
+
 = 1.3.9 = 
-* Added: Heading Icon Style 
+* Added: Heading icon style is added 
 
 = 1.3.8 =
 * Fixed: Uncaught TypeError: Cannot read properties of undefined (reading 'length')

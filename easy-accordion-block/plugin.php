@@ -4,9 +4,8 @@
  * Description:       Create beautiful accordions in the Gutenberg editor.
  * Requires at least: 6.6
  * Requires PHP:      7.4
- * Version:           1.3.9
- * Author:            Gutenbergkits Team
- * Author URI:        https://gutenbergkits.com
+ * Version:           1.4.5
+ * Author:            Binsaifullah
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       easy-accordion-block
@@ -26,7 +25,7 @@ if( ! class_exists( 'Esab_Accordion_Block' ) ) {
 		/**
 		 * Plugin Version
 		 */
-		const VERSION = '1.3.9';
+		const VERSION = '1.4.5';
 
 		// instance
 		protected static $instance = null;
@@ -39,7 +38,7 @@ if( ! class_exists( 'Esab_Accordion_Block' ) ) {
 			// define constants
 			$this->define_constants();
 
-			// init
+			// load files
 			$this->init();
 
 			// enable redirect
@@ -53,17 +52,20 @@ if( ! class_exists( 'Esab_Accordion_Block' ) ) {
 		 * Define Constants
 		 */
 		public function define_constants() {
-			$constants = [
-				'ESAB_VERSION' => self::VERSION,
-				'ESAB_URL'     => plugin_dir_url( __FILE__ ),
-				'ESAB_PATH'    => plugin_dir_path( __FILE__ ),
-				'ESAB_LIB_URL' => plugin_dir_url( __FILE__ ) . 'includes/',
-			];
+			if ( ! defined( 'ESAB_VERSION' ) ) {
+				define( 'ESAB_VERSION', self::VERSION );
+			}
 
-			foreach ( $constants as $key => $value ) {
-				if ( ! defined( $key ) ) {
-					define( $key, $value );
-				}
+			if ( ! defined( 'ESAB_URL' ) ) {
+				define( 'ESAB_URL', plugin_dir_url( __FILE__ ) );
+			}
+
+			if ( ! defined( 'ESAB_PATH' ) ) {
+				define( 'ESAB_PATH', plugin_dir_path( __FILE__ ) );
+			}
+
+			if ( ! defined( 'ESAB_LIB_URL' ) ) {
+				define( 'ESAB_LIB_URL', plugin_dir_url( __FILE__ ) . 'includes/' );
 			}
 		}
 

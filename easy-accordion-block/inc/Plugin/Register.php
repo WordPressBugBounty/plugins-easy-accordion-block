@@ -25,8 +25,10 @@ if( ! class_exists( 'Esab_Register' ) ) {
          */
         public function __construct() {
             add_action( 'init', [ $this, 'register_block' ] );
-
-            // var_dump( 'Register Block' );
+            // check block theme 
+			if( ! wp_is_block_theme() ) {
+				add_filter( 'should_load_separate_core_block_assets', '__return_true' );
+			}
         }
 
         /**
@@ -41,8 +43,8 @@ if( ! class_exists( 'Esab_Register' ) ) {
                     'is_pro' => false
                 ],
                 [
-                    'name'=>'unfold',
-                    'is_pro'=>true
+                    'name' => 'unfold',
+                    'is_pro' => true
                 ],
                 [
                     'name' => 'faqs',
@@ -50,19 +52,29 @@ if( ! class_exists( 'Esab_Register' ) ) {
                 ]
             ];
 
-            if ( ! empty( $blocks ) and is_array( $blocks ) ) {
-				foreach ( $blocks as $block ) {
-
-                    // if is_pro is true then check if the Esabp_Accordion_Block_Pro class exists or not and use ESABP_PATH constant
+            if ( ! empty( $blocks ) && is_array( $blocks ) ) {
+                foreach ( $blocks as $block ) {
+                    $block_name = $block['name'];
+            
+                    // Determine the correct path based on pro status
                     if ( $block['is_pro'] ) {
-                        if ( class_exists( 'Esabp_Accordion_Block_Pro' ) ) {
-                            register_block_type( trailingslashit( ESABP_PATH ) . '/build/blocks/' . $block['name'] );
+                        if ( ! class_exists( 'Esabp_Accordion_Block_Pro' ) || ! defined( 'ESABP_PATH' ) ) {
+                            continue; // Skip if pro class or constant doesn't exist
                         }
+                        $block_path = trailingslashit( ESABP_PATH ) . 'build/blocks/' . $block_name;
                     } else {
-					    register_block_type( trailingslashit( ESAB_PATH ) . '/build/blocks/' . $block['name'] );
+                        if ( ! defined( 'ESAB_PATH' ) ) {
+                            continue; // Skip if constant doesn't exist
+                        }
+                        $block_path = trailingslashit( ESAB_PATH ) . 'build/blocks/' . $block_name;
                     }
-				}
-			}
+
+                    // Check if block.json exists before registering
+                    if ( file_exists( $block_path . '/block.json' ) ) {
+                        register_block_type( $block_path );
+                    }
+                }
+            }
         }
 
         /**

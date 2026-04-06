@@ -24,19 +24,3 @@ button.esab__add-accordion:hover {
     border-bottom-width: 0;
     display: block !important;
 }
-
-/* .wp-block-esab-accordion .esab__body.esab__active {
-    display: block;
-}
-
-.esab__icon .esab__expand {
-    display: none;
-}
-
-.esab__icon.esab__active_icon .esab__collapse {
-    display: none;
-}
-
-.esab__icon.esab__active_icon .esab__expand {
-    display: flex;
-} */

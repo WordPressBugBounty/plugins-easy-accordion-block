@@ -186,3 +186,41 @@ a.pro__link {
 a.pro__link:hover {
     background: #2e0687;
 }
+
+.recommended-products {
+    margin-bottom: 1.5rem;
+}
+
+.products-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.product__item {
+    border: 1.5px solid #5a1ce4;
+    border-radius: 6px;
+}
+
+.product__item a {
+    padding: 12px;
+    display: block;
+    box-sizing: border-box;
+    text-decoration: none !important;
+}
+
+.product__item .title {
+    margin: 0 0 8px;
+    color: #5a1ce4;
+}
+
+.product__item .description {
+    font-size: 14px;
+}
+
+span.read-more {
+    color: #5a1ce4;
+    border-bottom: 1px solid currentColor;
+    font-size: 12px;
+}
