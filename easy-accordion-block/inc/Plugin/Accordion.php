@@ -45,6 +45,7 @@ if( ! class_exists( 'Esab_Accordion' ) ) {
             require_once ESAB_PATH . 'inc/Plugin/Fonts.php';
             require_once ESAB_PATH . 'inc/Plugin/Register.php';
             require_once ESAB_PATH . 'inc/Plugin/Style.php';
+            require_once ESAB_PATH . 'inc/Plugin/Patterns.php';
         }
         
     }
