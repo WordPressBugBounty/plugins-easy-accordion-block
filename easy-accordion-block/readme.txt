@@ -2,8 +2,8 @@
 Contributors: binsaifullah
 Tags: Accordion, FAQs, accordion block, faq block, gutenberg block
 Requires at least: 6.6
-Tested up to: 6.9
-Stable tag: 1.5.0
+Tested up to: 7.1
+Stable tag: 1.5.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -119,7 +119,10 @@ Yes, you can easily use your theme’s color palette for a consistent design acr
 
 == Changelog ==
 
-= 1.5.0 = 
+= 1.5.1 =
+* Added: Redesigned admin dashboard with new Dashboard and Help & Support tabs
+
+= 1.5.0 =
 * Added: Premade Patterns Import system built
 
 = 1.4.5 =

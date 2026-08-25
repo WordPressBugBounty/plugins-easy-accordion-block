@@ -1,226 +1,1573 @@
-body {
-    background: #fff !important;
-}
+/**
+ * Easy Accordion Block — admin dashboard
+ */
 
-#wpcontent {
-    padding-left: 0 !important;
-}
+/* -------------------------------------------------- *
+ * Tokens
+ * -------------------------------------------------- */
 
-p {
-    font-size: 15px;
-}
-.plugin_description {
-    font-size: 16px;
-}
+.esab-admin {
+    --esab-bg: #f4f6f7;
+    --esab-surface: #ffffff;
+    --esab-surface-soft: #fbfcfc;
+    --esab-border: #e3e8e8;
+    --esab-border-soft: #edf1f1;
 
-.plugin_head {
-    padding: 60px 0 30px;
-    max-width: 650px;
-    margin: 0 auto;
-    text-align: center;
-}
+    --esab-ink: #132523;
+    --esab-ink-2: #4a5c5a;
+    --esab-muted: #7c8c8a;
 
-.plugin__head_container,
-.tabs__titles {
-    background: #f2f7f9;
-}
+    --esab-brand: #3fa796;
+    --esab-brand-dark: #2f7f72;
+    --esab-brand-hover: #369287;
+    --esab-tint: #eaf5f3;
+    --esab-tint-2: #d6ebe7;
 
-.tabs__titles {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    --esab-deep: #12463e;
+    --esab-deep-2: #0d3a33;
+    --esab-deep-3: #134a41;
+    --esab-deep-line: #1c5b51;
+    --esab-deep-outline: #3d6b63;
 
-p.tab__title {
-    padding: 10px 15px;
+    --esab-on-deep: #b9ded7;
+    --esab-on-deep-2: #cfe8e3;
+    --esab-on-deep-3: #8fbdb5;
+    --esab-eyebrow: #7fcfc0;
+
+    --esab-warn-bg: #fdf6e7;
+    --esab-warn-border: #f0dcae;
+    --esab-warn-border-2: #f2e4c2;
+    --esab-warn-ink: #6b4e0f;
+    --esab-warn-ink-2: #8a6a22;
+    --esab-warn-accent: #e4a11b;
+
+    --esab-whatsapp: #25d366;
+    --esab-whatsapp-tint: #e7f9ee;
+    --esab-telegram: #229ed9;
+    --esab-telegram-tint: #e6f4fb;
+    --esab-mail: #2563eb;
+    --esab-mail-tint: #e8effd;
+
+    --esab-radius: 14px;
+    --esab-radius-sm: 10px;
+    --esab-radius-btn: 6px;
+
+    --esab-font: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+    background: var(--esab-bg);
+    color: var(--esab-ink);
+    font-family: var(--esab-font);
+    font-size: 13px;
+    line-height: 1.5;
     margin: 0;
-    text-align: center;
-    cursor: pointer;
-    border: 1px solid #f2f7f9;
-    border-bottom: 0;
+    min-height: calc(100vh - 32px);
+    -webkit-font-smoothing: antialiased;
 }
 
-p.tab__title.active {
-    background: #fff;
-    border-color: #f3f3f3;
+/*
+ * Give the page the full canvas. This file only loads on our own screen, so
+ * zeroing the wp-admin gutter here is safe — and it is the only compensation
+ * applied, so .esab-admin needs no negative margin of its own.
+ */
+#wpcontent {
+    padding-left: 0;
 }
 
-.tabs__panels {
-    padding: 30px 0;
+#wpbody-content {
+    padding-bottom: 0;
 }
 
-.tab__panel {
+#wpfooter {
     display: none;
 }
 
-.tab__panel.active {
+/*
+ * Admin notices print inside #wpbody-content, before this page's markup. The
+ * gutter is zeroed above, so inset them to line up with the dashboard rather
+ * than hiding them — they may carry messages the user needs to see.
+ */
+#wpbody-content > .notice,
+#wpbody-content > .updated,
+#wpbody-content > .error,
+#wpbody-content > .update-nag,
+#wpbody-content > .notice-warning {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.esab-admin *,
+.esab-admin *::before,
+.esab-admin *::after {
+    box-sizing: border-box;
+}
+
+/* :where() keeps the reset at zero specificity so component rules still win. */
+.esab-admin :where(p, h1, h2, h3, ul, ol, li) {
+    margin: 0;
+    padding: 0;
+}
+
+.esab-admin :where(ul, ol) {
+    list-style: none;
+}
+
+.esab-admin a {
+    text-decoration: none;
+}
+
+.esab-admin a:focus-visible,
+.esab-admin button:focus-visible {
+    outline: 2px solid var(--esab-brand);
+    outline-offset: 2px;
+    box-shadow: none;
+}
+
+.esab-icon {
     display: block;
+    flex-shrink: 0;
 }
 
-.tabs__container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
+/* -------------------------------------------------- *
+ * Top bar
+ * -------------------------------------------------- */
 
-/* Support Tab Content */
-.tab__panel_flex {
+.esab-topbar {
+    align-items: center;
+    background: var(--esab-surface);
+    border-bottom: 1px solid var(--esab-border);
     display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-between;
+    padding: 18px 40px;
+}
+
+.esab-brand {
+    align-items: center;
+    display: flex;
+    gap: 14px;
+}
+
+.esab-brand__mark {
+    align-items: center;
+    background: var(--esab-deep);
+    border-radius: 10px;
+    color: #fff;
+    display: flex;
+    height: 42px;
+    justify-content: center;
+    width: 42px;
+}
+
+.esab-brand__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.esab-brand__row {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+}
+
+.esab-brand__name {
+    color: var(--esab-ink);
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 22px;
+}
+
+.esab-badge {
+    background: var(--esab-tint);
+    border-radius: 20px;
+    color: var(--esab-brand-dark);
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 14px;
+    padding: 3px 9px;
+}
+
+.esab-brand__tagline {
+    color: var(--esab-muted);
+    font-size: 12.5px;
+    line-height: 18px;
+}
+
+.esab-topbar__actions {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* -------------------------------------------------- *
+ * Buttons and links
+ * -------------------------------------------------- */
+
+.esab-btn {
+    align-items: center;
+    border: 0;
+    border-radius: var(--esab-radius-btn);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: var(--esab-font);
+    font-size: 13px;
+    font-weight: 600;
+    gap: 7px;
+    justify-content: center;
+    line-height: 17px;
+    padding: 9px 16px;
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease;
+    white-space: nowrap;
+}
+
+.esab-btn--ghost {
+    background: var(--esab-surface);
+    box-shadow: inset 0 0 0 1px var(--esab-border);
+    color: var(--esab-ink-2);
+    font-weight: 500;
+    padding: 9px 14px;
+}
+
+.esab-btn--ghost:hover,
+.esab-btn--ghost:focus {
+    background: var(--esab-surface-soft);
+    box-shadow: inset 0 0 0 1px var(--esab-brand);
+    color: var(--esab-brand-dark);
+}
+
+.esab-btn--primary {
+    background: var(--esab-brand);
+    color: #fff;
+}
+
+.esab-btn--primary:hover,
+.esab-btn--primary:focus {
+    background: var(--esab-brand-hover);
+    color: #fff;
+}
+
+.esab-btn--outline-light {
+    background: transparent;
+    box-shadow: inset 0 0 0 1px var(--esab-deep-outline);
+    color: var(--esab-on-deep-2);
+    font-weight: 500;
+}
+
+.esab-btn--outline-light:hover,
+.esab-btn--outline-light:focus {
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+}
+
+.esab-btn--lg {
+    font-size: 13.5px;
+    gap: 8px;
+    line-height: 18px;
+    padding: 11px 20px;
+}
+
+.esab-btn--block {
+    padding: 13px 20px;
+    width: 100%;
+}
+
+.esab-btn--whatsapp {
+    background: var(--esab-whatsapp);
+    color: #fff;
+}
+
+.esab-btn--telegram {
+    background: var(--esab-telegram);
+    color: #fff;
+}
+
+.esab-btn--mail {
+    background: var(--esab-mail);
+    color: #fff;
+}
+
+.esab-btn--brand {
+    background: var(--esab-brand);
+    color: #fff;
+}
+
+.esab-btn--whatsapp:hover,
+.esab-btn--telegram:hover,
+.esab-btn--mail:hover,
+.esab-btn--brand:hover,
+.esab-btn--whatsapp:focus,
+.esab-btn--telegram:focus,
+.esab-btn--mail:focus,
+.esab-btn--brand:focus {
+    color: #fff;
+    filter: brightness(0.94);
+}
+
+.esab-link {
+    align-items: center;
+    color: var(--esab-brand-dark);
+    display: inline-flex;
+    font-size: 13px;
+    font-weight: 600;
+    gap: 7px;
+    line-height: 17px;
+}
+
+.esab-link:hover,
+.esab-link:focus {
+    color: var(--esab-brand);
+}
+
+.esab-link--sm {
+    font-size: 12.5px;
+    gap: 6px;
+    line-height: 16px;
+}
+
+.esab-eyebrow {
+    color: var(--esab-brand-dark);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    line-height: 14px;
+    text-transform: uppercase;
+}
+
+.esab-eyebrow--light {
+    color: var(--esab-eyebrow);
+    font-size: 11px;
+    letter-spacing: 1.4px;
+}
+
+/* -------------------------------------------------- *
+ * Tabs
+ * -------------------------------------------------- */
+
+.esab-tabs {
+    background: var(--esab-surface);
+    border-bottom: 1px solid var(--esab-border);
+    display: flex;
+    gap: 4px;
+    padding: 0 40px;
+}
+
+.esab-tabs__item {
+    border-bottom: 2px solid transparent;
+    color: var(--esab-muted);
+    display: block;
+    font-size: 13.5px;
+    font-weight: 500;
+    line-height: 18px;
+    margin-bottom: -1px;
+    padding: 14px 16px;
+    transition:
+        color 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.esab-tabs__item:hover,
+.esab-tabs__item:focus {
+    color: var(--esab-ink);
+}
+
+.esab-tabs__item.is-active {
+    border-bottom-color: var(--esab-brand);
+    color: var(--esab-brand-dark);
+    font-weight: 600;
+}
+
+/* -------------------------------------------------- *
+ * Layout
+ * -------------------------------------------------- */
+
+.esab-body {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 40px 40px;
+}
+
+.esab-columns {
     align-items: flex-start;
+    display: flex;
+    gap: 24px;
+}
+
+.esab-columns__main {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 0;
+}
+
+.esab-columns__side {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 400px;
+    flex-shrink: 0;
+}
+
+/* -------------------------------------------------- *
+ * Card primitives
+ * -------------------------------------------------- */
+
+.esab-card {
+    background: var(--esab-surface);
+    border-radius: var(--esab-radius);
+    box-shadow: inset 0 0 0 1px var(--esab-border);
+    overflow: hidden;
+}
+
+.esab-card--pad {
+    padding: 24px 24px 26px;
+}
+
+.esab-card--list {
+    padding: 22px 24px 10px;
+}
+
+.esab-card__head {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-bottom: 18px;
+}
+
+.esab-card__head--split {
+    align-items: center;
+    flex-direction: row;
+    gap: 16px;
     justify-content: space-between;
 }
 
-.tab__panel_left {
-    width: 65%;
+.esab-card__head--inset {
+    margin-bottom: 0;
+    padding: 24px 24px 18px;
 }
 
-.tab__panel_right {
-    width: 30%;
-}
-
-.video__container iframe {
-    width: 100%;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-    padding: 5px;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-.footer-panels {
-    display: flex;
-    gap: 15px;
-}
-
-.single__support_panel {
-    box-shadow: 0 0 10px rgb(0 0 0 / 8%);
-    border-radius: 5px;
-    padding: 30px;
-    box-sizing: border-box;
-    margin-bottom: 15px;
-    border: 1px solid #eeeeee;
-}
-
-h3.support__title {
-    margin: 0 0 10px;
-}
-
-a.support__link {
-    text-underline-offset: 3px;
-}
-
-.custom__block_request {
-    background: #f2f7f9;
-    padding: 50px;
-    margin-top: 50px;
-    border-radius: 5px;
-    box-sizing: border-box;
-    box-shadow: 0 0 5px rgb(0 0 0 / 30%);
-    text-align: center;
-}
-
-h3.custom__block_request_title {
-    margin: 0 0 15px;
-}
-
-/* credit btn */
-.credit-btn {
-    display: inline-block;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 2px;
-    background: #283187;
-    border: none !important;
-    color: #fff;
-    font-size: 16px;
-    a {
-        color: #ffb64e;
-        text-decoration: none !important;
-        &:hover {
-            color: #fff;
-            text-decoration: underline !important;
-        }
-    }
-}
-
-/* pro panels */
-.pro-panel {
-    border: 2px solid #5a1be4;
-    border-radius: 5px;
-    padding: 25px;
-}
-
-h3.pro__title {
-    margin: 0 0 20px;
-}
-
-p.pro__description {
-    margin: 0 0 15px;
-}
-
-ul.features-list {
-    margin: 0;
-    padding: 0;
+.esab-card__headtext {
     display: flex;
     flex-direction: column;
     gap: 4px;
-    margin-bottom: 25px;
+    min-width: 0;
 }
 
-ul.features-list li {
-    font-size: 14px;
-    display: flex;
+.esab-card__title {
+    color: var(--esab-ink);
+    font-size: 15.5px;
+    font-weight: 600;
+    line-height: 21px;
+}
+
+.esab-card__subtitle {
+    color: var(--esab-muted);
+    font-size: 12.5px;
+    font-weight: 400;
+    line-height: 19px;
+}
+
+.esab-chip {
     align-items: center;
-    gap: 5px;
+    background: var(--esab-tint);
+    border-radius: 8px;
+    color: var(--esab-brand-dark);
+    display: flex;
+    flex-shrink: 0;
+    height: 34px;
+    justify-content: center;
+    width: 34px;
 }
 
-a.pro__link {
-    background: #5a1be4;
+.esab-chip--outline {
+    background: var(--esab-surface);
+    box-shadow: inset 0 0 0 1px var(--esab-border);
+    height: 36px;
+    width: 36px;
+}
+
+.esab-chip--lg {
+    border-radius: 12px;
+    height: 46px;
+    width: 46px;
+}
+
+.esab-chip--brand {
+    background: var(--esab-tint);
+    color: var(--esab-brand-dark);
+}
+
+.esab-chip--whatsapp {
+    background: var(--esab-whatsapp-tint);
+    color: #128c4b;
+}
+
+.esab-chip--telegram {
+    background: var(--esab-telegram-tint);
+    color: var(--esab-telegram);
+}
+
+.esab-chip--mail {
+    background: var(--esab-mail-tint);
+    color: var(--esab-mail);
+}
+
+/* -------------------------------------------------- *
+ * Welcome band
+ * -------------------------------------------------- */
+
+.esab-welcome {
+    background: var(--esab-deep);
+    border-radius: var(--esab-radius);
+    display: flex;
+    overflow: hidden;
+}
+
+.esab-welcome__copy {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 0;
+    padding: 36px 40px;
+}
+
+.esab-welcome__headline {
     color: #fff;
-    padding: 10px 16px;
-    text-decoration: none;
-    border-radius: 3px;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 40px;
+}
+
+.esab-welcome__subhead {
+    color: var(--esab-on-deep);
     font-size: 14px;
-    transition: 0.2s;
+    font-weight: 400;
+    line-height: 22px;
 }
 
-a.pro__link:hover {
-    background: #2e0687;
+.esab-welcome__actions {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
-.recommended-products {
-    margin-bottom: 1.5rem;
-}
-
-.products-list {
+.esab-welcome__preview {
+    background: var(--esab-deep-2);
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    flex-wrap: wrap;
+    flex-shrink: 0;
+    gap: 10px;
+    justify-content: center;
+    padding: 36px 40px;
+    width: 470px;
 }
 
-.product__item {
-    border: 1.5px solid #5a1ce4;
-    border-radius: 6px;
+.esab-preview-item {
+    background: var(--esab-deep-3);
+    border-radius: 8px;
+    box-shadow: inset 0 0 0 1px var(--esab-deep-line);
+    transition: box-shadow 0.15s ease;
 }
 
-.product__item a {
-    padding: 12px;
+.esab-preview-item.is-open {
+    box-shadow: inset 0 0 0 1px var(--esab-brand);
+}
+
+.esab-preview-item__head {
+    align-items: center;
+    background: none;
+    border: 0;
+    color: #eaf5f3;
+    cursor: pointer;
+    display: flex;
+    font-family: var(--esab-font);
+    font-size: 12.5px;
+    font-weight: 500;
+    gap: 12px;
+    justify-content: space-between;
+    line-height: 18px;
+    padding: 13px 16px;
+    text-align: left;
+    width: 100%;
+}
+
+.esab-preview-item__q {
+    flex: 1 1 0;
+}
+
+.esab-preview-item__toggle {
+    color: #6e9c94;
+    display: flex;
+    flex-shrink: 0;
+}
+
+.esab-preview-item.is-open .esab-preview-item__toggle {
+    color: #5fc3b2;
+}
+
+.esab-preview-item__panel {
+    display: none;
+    padding: 0 16px 13px;
+}
+
+.esab-preview-item.is-open .esab-preview-item__panel {
     display: block;
-    box-sizing: border-box;
-    text-decoration: none !important;
 }
 
-.product__item .title {
-    margin: 0 0 8px;
-    color: #5a1ce4;
+.esab-preview-item__a {
+    color: var(--esab-on-deep-3);
+    font-size: 11.5px;
+    line-height: 18px;
 }
 
-.product__item .description {
-    font-size: 14px;
+/* Toggle icon swap, shared by the welcome preview and the FAQ list. */
+.esab-icon--minus,
+.esab-icon--plus {
+    display: none;
 }
 
-span.read-more {
-    color: #5a1ce4;
-    border-bottom: 1px solid currentColor;
+[aria-expanded='true'] .esab-icon--minus,
+[aria-expanded='false'] .esab-icon--plus {
+    display: block;
+}
+
+/* -------------------------------------------------- *
+ * Setup guide
+ * -------------------------------------------------- */
+
+.esab-setup .esab-card__head {
+    margin-bottom: 0;
+    padding: 22px 24px 18px;
+}
+
+.esab-progress {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 7px;
+}
+
+.esab-progress__count {
+    color: var(--esab-brand-dark);
     font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    white-space: nowrap;
+}
+
+.esab-progress__track {
+    background: var(--esab-tint-2);
+    border-radius: 3px;
+    display: block;
+    height: 6px;
+    overflow: hidden;
+    width: 150px;
+}
+
+.esab-progress__fill {
+    background: var(--esab-brand);
+    border-radius: 3px;
+    display: block;
+    height: 6px;
+    transition: width 0.3s ease;
+}
+
+.esab-step {
+    align-items: center;
+    border-top: 1px solid var(--esab-border-soft);
+    display: flex;
+    gap: 14px;
+    padding: 16px 24px;
+}
+
+.esab-step__marker {
+    align-items: center;
+    background: var(--esab-surface);
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 1.5px var(--esab-border);
+    color: var(--esab-muted);
+    display: flex;
+    flex-shrink: 0;
+    height: 24px;
+    justify-content: center;
+    width: 24px;
+}
+
+.esab-step.is-done .esab-step__marker {
+    background: var(--esab-brand);
+    box-shadow: none;
+    color: #fff;
+}
+
+.esab-step__text {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.esab-step__title {
+    color: var(--esab-ink);
+    font-size: 13.5px;
+    font-weight: 500;
+    line-height: 19px;
+}
+
+.esab-step.is-done .esab-step__title {
+    color: var(--esab-muted);
+}
+
+.esab-step__desc {
+    color: var(--esab-muted);
+    font-size: 12px;
+    line-height: 17px;
+}
+
+.esab-step__action {
+    border-radius: var(--esab-radius-btn);
+    box-shadow: inset 0 0 0 1px var(--esab-border);
+    color: var(--esab-brand-dark);
+    flex-shrink: 0;
+    font-size: 12.5px;
+    font-weight: 600;
+    line-height: 16px;
+    padding: 8px 14px;
+    transition:
+        box-shadow 0.15s ease,
+        background-color 0.15s ease;
+}
+
+.esab-step__action:hover,
+.esab-step__action:focus {
+    background: var(--esab-tint);
+    box-shadow: inset 0 0 0 1px var(--esab-brand);
+    color: var(--esab-brand-dark);
+}
+
+/* -------------------------------------------------- *
+ * Tutorial card
+ * -------------------------------------------------- */
+
+.esab-tutorial {
+    display: flex;
+}
+
+.esab-tutorial__thumb {
+    align-items: center;
+    background: var(--esab-deep-2);
+    display: flex;
+    flex-shrink: 0;
+    height: 236px;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    width: 392px;
+}
+
+.esab-tutorial__thumb img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.esab-tutorial__play {
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    color: var(--esab-deep);
+    display: flex;
+    height: 58px;
+    justify-content: center;
+    left: 50%;
+    padding-left: 4px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition:
+        transform 0.18s ease,
+        background-color 0.18s ease;
+    width: 58px;
+}
+
+.esab-tutorial__thumb:hover .esab-tutorial__play,
+.esab-tutorial__thumb:focus .esab-tutorial__play {
+    background: #fff;
+    transform: translate(-50%, -50%) scale(1.06);
+}
+
+.esab-tutorial__copy {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    min-width: 0;
+    padding: 30px 32px;
+}
+
+.esab-tutorial__title {
+    color: var(--esab-ink);
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 27px;
+}
+
+.esab-tutorial__desc {
+    color: var(--esab-ink-2);
+    font-size: 13px;
+    line-height: 21px;
+}
+
+/* -------------------------------------------------- *
+ * Tiles grid ("What's included", support channels)
+ * -------------------------------------------------- */
+
+.esab-grid {
+    display: grid;
+    gap: 14px;
+}
+
+.esab-grid--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.esab-grid--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.esab-tile {
+    background: var(--esab-surface-soft);
+    border-radius: var(--esab-radius-sm);
+    box-shadow: inset 0 0 0 1px var(--esab-border-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding: 18px;
+}
+
+.esab-tile--center {
+    align-items: center;
+    gap: 11px;
+    padding: 22px 20px 20px;
+    text-align: center;
+}
+
+.esab-tile__title {
+    color: var(--esab-ink);
+    font-size: 13.5px;
+    font-weight: 600;
+    line-height: 19px;
+}
+
+.esab-tile__title--lg {
+    font-size: 14.5px;
+    line-height: 20px;
+}
+
+.esab-tile__desc {
+    color: var(--esab-muted);
+    font-size: 11.5px;
+    line-height: 18px;
+}
+
+.esab-tile--center .esab-tile__desc {
+    font-size: 12px;
+    line-height: 19px;
+}
+
+.esab-tile--center .esab-btn {
+    font-size: 12.5px;
+    line-height: 16px;
+    margin-top: 2px;
+    padding: 10px 20px;
+}
+
+/* -------------------------------------------------- *
+ * Pro card
+ * -------------------------------------------------- */
+
+.esab-pro {
+    border: 1.5px solid var(--esab-brand);
+}
+
+.esab-pro__head {
+    background: var(--esab-tint);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 22px 24px 20px;
+}
+
+.esab-pro__badgerow {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.esab-pro__badge {
+    align-items: center;
+    background: var(--esab-deep);
+    border-radius: 20px;
+    color: #fff;
+    display: inline-flex;
+    font-size: 10.5px;
+    font-weight: 600;
+    gap: 6px;
+    letter-spacing: 0.8px;
+    line-height: 14px;
+    padding: 5px 11px;
+    text-transform: uppercase;
+}
+
+.esab-pro__price {
+    color: var(--esab-brand-dark);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.esab-pro__title {
+    color: var(--esab-ink);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.esab-pro__desc {
+    color: var(--esab-ink-2);
+    font-size: 12.5px;
+    line-height: 19px;
+}
+
+.esab-pro__features {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    padding: 20px 24px 8px;
+}
+
+.esab-pro__features li {
+    align-items: center;
+    color: var(--esab-ink-2);
+    display: flex;
+    font-size: 12.5px;
+    gap: 10px;
+    line-height: 19px;
+}
+
+.esab-pro__features .esab-icon {
+    color: var(--esab-brand);
+}
+
+.esab-pro__foot {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px 24px 24px;
+}
+
+.esab-pro__guarantee {
+    color: var(--esab-muted);
+    font-size: 11.5px;
+    line-height: 16px;
+}
+
+/* -------------------------------------------------- *
+ * Link lists and product lists
+ * -------------------------------------------------- */
+
+.esab-linklist li + li {
+    border-top: 1px solid var(--esab-border-soft);
+}
+
+.esab-linklist a {
+    align-items: center;
+    display: flex;
+    gap: 12px;
+    padding: 14px 0;
+}
+
+.esab-linklist__text {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    gap: 1px;
+    min-width: 0;
+}
+
+.esab-linklist__label {
+    color: var(--esab-ink);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.esab-linklist__desc {
+    color: var(--esab-muted);
+    font-size: 11.5px;
+    line-height: 17px;
+}
+
+.esab-linklist__arrow,
+.esab-products__arrow {
+    color: var(--esab-muted);
+    transition:
+        color 0.15s ease,
+        transform 0.15s ease;
+}
+
+.esab-linklist a:hover .esab-linklist__label,
+.esab-linklist a:focus .esab-linklist__label,
+.esab-products a:hover .esab-products__label,
+.esab-products a:focus .esab-products__label {
+    color: var(--esab-brand-dark);
+}
+
+.esab-linklist a:hover .esab-linklist__arrow,
+.esab-linklist a:focus .esab-linklist__arrow,
+.esab-products a:hover .esab-products__arrow,
+.esab-products a:focus .esab-products__arrow {
+    color: var(--esab-brand);
+    transform: translate(1px, -1px);
+}
+
+.esab-products {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.esab-products a {
+    align-items: center;
+    background: var(--esab-surface-soft);
+    border-radius: var(--esab-radius-sm);
+    box-shadow: inset 0 0 0 1px var(--esab-border-soft);
+    display: flex;
+    gap: 12px;
+    padding: 14px 16px;
+    transition: box-shadow 0.15s ease;
+}
+
+.esab-products a:hover,
+.esab-products a:focus {
+    box-shadow: inset 0 0 0 1px var(--esab-brand);
+}
+
+.esab-products__text {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    gap: 1px;
+    min-width: 0;
+}
+
+.esab-products__label {
+    color: var(--esab-ink);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 18px;
+}
+
+.esab-products__desc {
+    color: var(--esab-muted);
+    font-size: 11.5px;
+    line-height: 17px;
+}
+
+/* -------------------------------------------------- *
+ * Help & Support — hero
+ * -------------------------------------------------- */
+
+.esab-hero {
+    align-items: center;
+    background: var(--esab-deep);
+    border-radius: var(--esab-radius);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 40px;
+    text-align: center;
+}
+
+.esab-hero__title {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 39px;
+}
+
+.esab-hero__subtitle {
+    color: var(--esab-on-deep);
+    font-size: 14px;
+    line-height: 22px;
+    max-width: 640px;
+}
+
+/* -------------------------------------------------- *
+ * Help & Support — FAQ
+ * -------------------------------------------------- */
+
+.esab-faq__item {
+    border-top: 1px solid var(--esab-border-soft);
+}
+
+.esab-faq__item.is-open {
+    background: var(--esab-surface-soft);
+}
+
+.esab-faq__q {
+    align-items: center;
+    background: none;
+    border: 0;
+    color: var(--esab-ink);
+    cursor: pointer;
+    display: flex;
+    font-family: var(--esab-font);
+    font-size: 13.5px;
+    font-weight: 500;
+    gap: 14px;
+    justify-content: space-between;
+    line-height: 20px;
+    padding: 18px 24px;
+    text-align: left;
+    width: 100%;
+}
+
+.esab-faq__item.is-open .esab-faq__q {
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+
+.esab-faq__toggle {
+    align-items: center;
+    background: var(--esab-tint);
+    border-radius: 12px;
+    color: var(--esab-brand-dark);
+    display: flex;
+    flex-shrink: 0;
+    height: 24px;
+    justify-content: center;
+    transition:
+        background-color 0.15s ease,
+        color 0.15s ease;
+    width: 24px;
+}
+
+.esab-faq__item.is-open .esab-faq__toggle {
+    background: var(--esab-brand);
+    color: #fff;
+}
+
+.esab-faq__panel {
+    display: none;
+    padding: 0 24px 18px;
+}
+
+.esab-faq__item.is-open .esab-faq__panel {
+    display: block;
+}
+
+.esab-faq__a {
+    color: var(--esab-ink-2);
+    font-size: 12.5px;
+    line-height: 21px;
+}
+
+/* -------------------------------------------------- *
+ * Help & Support — troubleshoot
+ * -------------------------------------------------- */
+
+.esab-troubleshoot {
+    background: var(--esab-warn-bg);
+    border-radius: var(--esab-radius);
+    box-shadow: inset 0 0 0 1px var(--esab-warn-border);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 22px 24px 24px;
+}
+
+.esab-troubleshoot__head {
+    align-items: center;
+    display: flex;
+    gap: 11px;
+}
+
+.esab-troubleshoot__head > .esab-icon {
+    color: var(--esab-warn-accent);
+}
+
+.esab-troubleshoot__headtext {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.esab-troubleshoot__title {
+    color: var(--esab-warn-ink);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.esab-troubleshoot__subtitle {
+    color: var(--esab-warn-ink-2);
+    font-size: 12.5px;
+    line-height: 19px;
+}
+
+.esab-troubleshoot__list {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.esab-troubleshoot__item {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: var(--esab-radius-sm);
+    box-shadow: inset 0 0 0 1px var(--esab-warn-border-2);
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 16px;
+}
+
+.esab-troubleshoot__num {
+    align-items: center;
+    background: var(--esab-warn-accent);
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    font-size: 11px;
+    font-weight: 600;
+    height: 22px;
+    justify-content: center;
+    line-height: 14px;
+    width: 22px;
+}
+
+.esab-troubleshoot__itemtitle {
+    color: var(--esab-warn-ink);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 18px;
+}
+
+.esab-troubleshoot__itemdesc {
+    color: var(--esab-warn-ink-2);
+    font-size: 11.5px;
+    line-height: 18px;
+}
+
+/* -------------------------------------------------- *
+ * Help & Support — priority card
+ * -------------------------------------------------- */
+
+.esab-priority {
+    background: var(--esab-deep);
+    border-radius: var(--esab-radius);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 24px 26px;
+}
+
+.esab-priority__title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.esab-priority__desc {
+    color: var(--esab-on-deep);
+    font-size: 12.5px;
+    line-height: 20px;
+}
+
+.esab-priority__sla {
+    align-items: center;
+    background: var(--esab-deep-2);
+    border-radius: var(--esab-radius-btn);
+    color: var(--esab-on-deep-2);
+    display: flex;
+    font-size: 12px;
+    gap: 10px;
+    line-height: 17px;
+    padding: 11px 14px;
+}
+
+.esab-priority__sla .esab-icon {
+    color: var(--esab-eyebrow);
+}
+
+/* -------------------------------------------------- *
+ * Help & Support — system report
+ * -------------------------------------------------- */
+
+.esab-report__list {
+    background: var(--esab-surface-soft);
+    border-radius: var(--esab-radius-sm);
+    box-shadow: inset 0 0 0 1px var(--esab-border-soft);
+    margin-bottom: 14px;
+    padding: 4px 16px;
+}
+
+.esab-report__list li {
+    align-items: center;
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+    padding: 11px 0;
+}
+
+.esab-report__list li + li {
+    border-top: 1px solid var(--esab-border-soft);
+}
+
+.esab-report__key {
+    color: var(--esab-muted);
+    font-size: 12px;
+    line-height: 17px;
+}
+
+.esab-report__value {
+    align-items: center;
+    color: var(--esab-ink);
+    display: flex;
+    font-size: 12px;
+    font-weight: 500;
+    gap: 7px;
+    line-height: 17px;
+    text-align: right;
+}
+
+.esab-report__value .esab-icon {
+    color: var(--esab-brand);
+}
+
+.esab-report__value.is-warning .esab-icon {
+    color: var(--esab-warn-accent);
+}
+
+.esab-report .esab-btn--ghost {
+    font-weight: 600;
+    padding: 11px 18px;
+}
+
+/* -------------------------------------------------- *
+ * License tab
+ * -------------------------------------------------- */
+
+.esab-license input[type='text'],
+.esab-license input[type='password'] {
+    border: 1px solid var(--esab-border);
+    border-radius: var(--esab-radius-btn);
+    font-family: var(--esab-font);
+    max-width: 420px;
+    padding: 9px 12px;
+    width: 100%;
+}
+
+/* -------------------------------------------------- *
+ * Responsive
+ * -------------------------------------------------- */
+
+/*
+ * The layout responds to the width of the admin canvas, not the viewport: in
+ * wp-admin those differ by the admin menu (160px expanded, 36px collapsed, 0 on
+ * small screens), so a viewport query would break at the wrong moment. The
+ * @media blocks repeat the same rules for browsers without container query
+ * support, offset by the width of an expanded admin menu.
+ */
+
+.esab-admin {
+    container-type: inline-size;
+    container-name: esab;
+}
+
+/* ---- Two columns become one ---- */
+
+@container esab (max-width: 1160px) {
+    .esab-columns {
+        flex-direction: column;
+    }
+
+    .esab-columns__side {
+        width: 100%;
+    }
+
+    .esab-welcome {
+        flex-direction: column;
+    }
+
+    .esab-welcome__preview {
+        width: 100%;
+    }
+
+    .esab-grid--3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media screen and (max-width: 1320px) {
+    .esab-columns {
+        flex-direction: column;
+    }
+
+    .esab-columns__side {
+        width: 100%;
+    }
+
+    .esab-welcome {
+        flex-direction: column;
+    }
+
+    .esab-welcome__preview {
+        width: 100%;
+    }
+
+    .esab-grid--3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ---- Everything stacks ---- */
+
+@container esab (max-width: 860px) {
+    .esab-topbar,
+    .esab-tabs,
+    .esab-body {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .esab-tabs {
+        overflow-x: auto;
+    }
+
+    .esab-welcome__copy,
+    .esab-welcome__preview {
+        padding: 28px 24px;
+    }
+
+    .esab-welcome__headline {
+        font-size: 24px;
+        line-height: 33px;
+    }
+
+    .esab-hero {
+        padding: 32px 24px;
+    }
+
+    .esab-hero__title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .esab-tutorial {
+        flex-direction: column;
+    }
+
+    .esab-tutorial__thumb {
+        height: 200px;
+        width: 100%;
+    }
+
+    .esab-grid--3,
+    .esab-grid--2,
+    .esab-troubleshoot__list {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .esab-step {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .esab-card__head--split {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .esab-progress {
+        align-items: flex-start;
+    }
+}
+
+@media screen and (max-width: 1020px) {
+    .esab-topbar,
+    .esab-tabs,
+    .esab-body {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .esab-tabs {
+        overflow-x: auto;
+    }
+
+    .esab-welcome__copy,
+    .esab-welcome__preview {
+        padding: 28px 24px;
+    }
+
+    .esab-welcome__headline {
+        font-size: 24px;
+        line-height: 33px;
+    }
+
+    .esab-hero {
+        padding: 32px 24px;
+    }
+
+    .esab-hero__title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .esab-tutorial {
+        flex-direction: column;
+    }
+
+    .esab-tutorial__thumb {
+        height: 200px;
+        width: 100%;
+    }
+
+    .esab-grid--3,
+    .esab-grid--2,
+    .esab-troubleshoot__list {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .esab-step {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .esab-card__head--split {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .esab-progress {
+        align-items: flex-start;
+    }
 }
