@@ -1,123 +1,182 @@
-=== Easy Accordion Block ===
+=== Easy Accordion Block – Accordion, FAQ & Collapsible Content for the Block Editor ===
 Contributors: binsaifullah
-Tags: Accordion, FAQs, accordion block, faq block, gutenberg block
+Tags: accordion, faq, faqs, accordion block, collapsible content
 Requires at least: 6.6
 Tested up to: 7.1
-Stable tag: 1.5.1
+Stable tag: 1.5.2
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Easy Accordion Block allows you to create an accordion or a FAQs section in Gutenberg editor easily.
+Build fast, accessible accordions and FAQ sections in the WordPress block editor.
 
 == Description ==
 
-# Easy Accordion Block – Create Stunning & Responsive Accordions Effortlessly  
+**Easy Accordion Block** adds a native accordion block to the WordPress block editor, so you can build **FAQ sections, product specifications, documentation, and collapsible content** in minutes — without shortcodes, without a page builder, and without touching a line of code.
 
-**Easy Accordion Block** is a lightweight and powerful **Gutenberg block** that allows you to create beautiful **accordion sections** or **FAQ sections** without writing a single line of code! Built with **Gutenberg native components**, this block ensures seamless integration with the WordPress block editor and works flawlessly with any WordPress theme.  
+It is built entirely with Gutenberg's own components, so the controls feel like the rest of the editor and the output matches your theme automatically.
 
-🌟 **[View Demo](https://accordion.gutenbergkits.com/demos)** | **[Get Pro Version](https://accordion.gutenbergkits.com/pricing)**
+🌟 **[View Live Demos](https://accordion.gutenbergkits.com/demos)** | **[Compare Free vs Pro](https://accordion.gutenbergkits.com/pricing/#comparison)**
 
-### Video Tutorial 
 [youtube http://www.youtube.com/watch?v=Hh3LNLpwzX4]
 
-## 🚀 Why Choose Easy Accordion Block?  
-✅ **Fast & Lightweight** – Loads scripts only on pages where the block is used, ensuring better performance.  
-✅ **Highly Customizable** – Adjust the accordion’s design, colors, icons, and layout to match your website’s aesthetics.  
-✅ **No Coding Required** – Drag, drop, and customize accordion items effortlessly within the block editor.  
-✅ **Works with Any Theme** – Fully compatible with all WordPress themes.  
-✅ **SEO & Accessibility Friendly** – Designed with best practices for performance and user experience.  
+= Why choose Easy Accordion Block? =
 
-## ✨ Key Features  
-- **Single & Multiple Accordion Items Opened at Once** – Control how accordion items behave.  
-- **Keep Accordion Active on Load** – Set default open items for better user interaction.  
-- **Allow Closing All Accordion Items** – Users can collapse all accordions for a cleaner view.  
-- **Nested Accordion Support** – Create multi-level accordions effortlessly.  
-- **Customizable Icons** – Choose from **100+ SVG icons** for active and inactive states.  
-- **Add Any Block as Accordion Content** – Embed images, videos, or even other blocks inside accordion items.  
-- **Smart Styling Options** – Adjust **colors, margins, padding**, and use **theme color palettes** for seamless design integration.  
-- **Unlimited Accordion Items** – Add as many accordions as you need.  
-- **Fully Responsive** – Looks great on **desktop, tablet, and mobile** devices.  
-- **Accessibility Enabled** – Ensures a better user experience for all visitors.  
+* **Truly native** – built with Gutenberg components, not a wrapper around an old jQuery plugin.
+* **Loads only where it is used** – block assets are enqueued on the pages that actually contain an accordion.
+* **Accessible by default** – real ARIA roles, full keyboard support, and screen-reader-friendly panels.
+* **Works with any theme** – block themes, classic themes, and hybrid themes.
+* **Any content inside** – put images, videos, buttons, columns, or any other block inside a panel.
 
-Whether you're building **FAQs, product feature sections, or collapsible content areas**, **Easy Accordion Block** makes it simple and efficient.  
+= Accordion features =
 
-👉 **Download now and start creating beautiful accordions in seconds!**
+* **Single or multiple panels open** – decide whether one item stays open or several can be expanded at once.
+* **Allow all panels closed** – let visitors collapse everything for a cleaner page.
+* **Open on page load** – mark any item to render already expanded.
+* **Nested accordions** – place an accordion inside a panel, with optional separate styling for the nested level.
+* **130+ built-in SVG icons** – pick separate icons for the expanded and collapsed state, on the left or the right.
+* **Heading icons** – add an icon in front of any accordion title.
+* **Premade patterns** – start from a ready-made design and edit it, instead of building from scratch.
 
-### 🌟 Pro Features
-- Schema Markup
-- Badge
-- Image Accordion
-- Load More
-- Search
-- All Open/Close
-- Linked
-- Disable Accordion
-- QA Style
-- Content Folding
-- 3 Activator Events (Click, Hover, Autoplay)
-- Check List Layout
-- Step Layout
-- Sub heading
-- Heading icon
-- Header Bar
-- Custom Icon/Image
+= Design and styling =
+
+* **Full responsive control** – separate desktop, tablet, and mobile values for spacing and sizing.
+* **Normal, hover, and active states** – style each state independently.
+* **Typography** – font family, weight, size, line height, letter spacing, transform, and decoration.
+* **Borders, radius, padding, margin, box shadow** – on the item, the header, and the panel.
+* **Theme colour palette support** – colours stay consistent with the rest of your site.
+
+= Accessibility =
+
+Accessibility is a feature here, not an afterthought:
+
+* Correct `aria-expanded`, `aria-controls`, and labelled panel regions.
+* Full keyboard operation — **Enter**, **Space**, **Up**, **Down**, **Home**, and **End**.
+* Unique, non-colliding IDs even with several accordions on the same page.
+* Respects the visitor's **reduced motion** preference.
+* Panel content stays readable when JavaScript is unavailable, and expands automatically when the page is **printed**.
+
+= Privacy =
+
+Google Fonts are requested only when you actually choose one, and only in the weights you use. You can switch remote font loading off entirely with a setting or the `esab_disable_google_fonts` filter — useful for GDPR-sensitive sites.
+
+= Perfect for =
+
+FAQ pages · knowledge bases and documentation · product specifications · pricing and policy pages · course and lesson outlines · service descriptions · anywhere long content needs to collapse.
+
+= Go further with Easy Accordion Block Pro =
+
+The free plugin covers everyday accordions and FAQs. [Easy Accordion Block Pro](https://accordion.gutenbergkits.com/pricing/) adds:
+
+* **FAQs block with FAQ schema markup** – outputs valid FAQPage JSON-LD so your questions are eligible for Google rich results.
+* **Instant search** – filter long FAQ lists as the visitor types.
+* **Load more** – reveal items in batches instead of all at once.
+* **Open all / close all buttons** – expand or collapse an entire set in one click.
+* **Three activators** – open on click, on hover, or play through automatically.
+* **Badges** – highlight individual items with a label such as "New" or "50% OFF".
+* **Subheadings** – add supporting text under any accordion title.
+* **Linked accordions** – turn the title, the whole header, or an extra icon into a link.
+* **Disable specific items** – lock an item so it cannot be opened on the front end.
+* **Custom icons** – upload your own SVG or image instead of using the built-in set.
+* **Unfold block** – fold long content behind a Show More / Show Less button.
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
+= From the WordPress dashboard =
 
-e.g.
+1. Go to **Plugins → Add New**.
+2. Search for **Easy Accordion Block**.
+3. Click **Install Now**, then **Activate**.
 
-1. Upload the plugin files to the `/wp-content/plugins/easy-accordion-block` directory, or install the plugin through the WordPress plugins screen directly.
-1. Activate the plugin through the 'Plugins' screen in WordPress
-1. Use the Settings->easy-accordion-block screen to configure the plugin
-1. (Make your instructions match the desired user flow for activating and installing your plugin. Include any steps that might be needed for explanatory purposes)
+= Manual installation =
+
+1. Upload the `easy-accordion-block` folder to `/wp-content/plugins/`.
+2. Activate the plugin through the **Plugins** screen in WordPress.
+
+= Creating your first accordion =
+
+1. Edit any post or page.
+2. Click **+** and search for **Accordion**.
+3. Type your title, then add any blocks you like inside the panel.
+4. Use the **Add Accordion Item** button to add more items.
 
 == Frequently Asked Questions ==
 
-= Is it responsive? =
-Yes, it is fully responsive and adapts perfectly to any screen size.
+= How do I add an accordion to a WordPress page? =
+Edit the page, click the **+** inserter, search for "Accordion", and insert the block. Type your heading, then drop any blocks you want inside the panel. There is no shortcode to remember.
 
-= Will it slow down my site? =
-Never, it is lightweight and only loads scripts on the pages where the block is used, ensuring optimal performance.
+= How do I create an FAQ section? =
+Insert the Accordion block and add one item per question. Put the question in the heading and the answer inside the panel. For FAQ schema markup that makes your questions eligible for Google rich results, use the FAQs block in the Pro version.
 
-= Can I use any content within the accordion? =
-Yes, you can add any block or content as accordion content, providing great flexibility.
+= Does this plugin add FAQ schema for Google rich results? =
+FAQ schema (FAQPage JSON-LD) is included in the Pro version through its dedicated FAQs block. The free plugin focuses on building and styling the accordion itself.
 
-= Can multiple accordion items be open at the same time? =
-Yes, you have the option to allow single or multiple accordion items to be open simultaneously.
+= Will it slow down my website? =
+No. Block assets are only loaded on pages that actually contain the block, so pages without an accordion are unaffected.
 
-= Can I keep an accordion item active on load? =
-Yes, the plugin allows you to keep specific accordion items active when the page loads.
+= Does it work with my theme? =
+Yes. It works with block themes, classic themes, and hybrid themes, and it picks up your theme's colour palette so accordions match the rest of your site.
+
+= Can I put images, videos, or other blocks inside an accordion? =
+Yes. Each panel is a normal block canvas, so you can add images, videos, buttons, columns, forms, or any other block.
+
+= Can I have more than one accordion item open at the same time? =
+Yes. There is a setting to allow multiple panels open at once, or to keep it to one at a time. You can also allow every panel to be closed.
+
+= Can an accordion item be open when the page loads? =
+Yes. Turn on the "Make it active on load" option for any item and it renders already expanded.
 
 = Does it support nested accordions? =
-Yes, nested accordions are fully supported, allowing you to create complex structures easily.
+Yes. You can place an accordion inside another accordion's panel, and optionally give the nested level its own styling.
 
-= Are there customization options? =
-Absolutely! The plugin offers highly customizable options, including custom margins, padding, colors, and more.
+= Is it accessible and keyboard friendly? =
+Yes. Headers expose the correct ARIA state, panels are labelled regions, and you can operate the whole accordion with Enter, Space, Up, Down, Home, and End. Reduced-motion preferences are respected.
+
+= What happens if JavaScript is disabled? =
+Panel content stays visible and readable, so no answer is ever hidden from a visitor or a search engine crawler.
+
+= Can visitors print the page? =
+Yes. When printed, every panel expands automatically and the interactive controls are hidden.
 
 = How many accordion items can I add? =
-You can add an unlimited number of accordion items, making it suitable for any content length.
+As many as you need — there is no limit.
 
-= Does it come with icons? =
-Yes, it includes 50+ SVG icons for both active and inactive accordion states, giving you plenty of design options.
+= How many icons are included? =
+More than 130 SVG icons, and you can set a different icon for the expanded and collapsed state. Pro adds the ability to upload your own SVG or image.
 
-= Is it built with Gutenberg Native Components? =
-Yes, it is developed using Gutenberg Native Components, ensuring seamless integration with the WordPress block editor.
+= Is it responsive on mobile? =
+Yes. Spacing, sizing, and typography each have separate desktop, tablet, and mobile values.
 
-= Does it support accessibility? =
-Yes, the plugin is accessibility-enabled, making it usable for all users, including those with disabilities.
+= Does it load Google Fonts, and can I turn that off? =
+Fonts are only requested when you select one, and only in the weights you actually use. You can disable remote font loading entirely with a setting or the `esab_disable_google_fonts` filter.
 
-= Can I customize the styles for active accordion items? =
-Yes, the plugin provides options to apply custom styles specifically for active accordion items.
-
-= Does it integrate with my theme’s color palette? =
-Yes, you can easily use your theme’s color palette for a consistent design across your website.
+= Is it built with Gutenberg native components? =
+Yes. The interface uses Gutenberg's own components, so it behaves like the rest of the block editor.
 
 == Screenshots ==
 
+1. An FAQ section built with the Accordion block on the front end.
+2. Editing accordion items directly in the block editor.
+3. Block settings — open behaviour, icons, and heading options.
+4. Style controls with responsive desktop, tablet, and mobile values.
+5. Choosing from the built-in SVG icon library.
+6. Nested accordions inside an accordion panel.
+7. Starting from a premade pattern.
+
 == Changelog ==
+
+= 1.5.2 =
+* Fixed: Accordion panels could share the same ID when more than one accordion was on a page, breaking screen-reader announcements
+* Fixed: Open All / Close All triggered a large number of redundant animations on long lists
+* Fixed: Nested accordions had their toggle handlers bound twice
+* Fixed: A link inside an accordion header produced invalid nested interactive markup; expansion now uses a real button
+* Fixed: Instant Search matched text from nested accordions and lost the Load More state when the query was cleared
+* Fixed: Google Fonts were requested after wp_head and at all nine weights; they now load in the head, only in the weights used
+* Fixed: A single unsupported CSS declaration could discard all of a block's styling
+* Added: Keyboard navigation between headers (Up/Down/Home/End)
+* Added: Content stays readable when JavaScript is unavailable, and when printing
+* Added: prefers-reduced-motion is respected
+* Added: esab_disable_google_fonts filter and option
 
 = 1.5.1 =
 * Added: Redesigned admin dashboard with new Dashboard and Help & Support tabs
@@ -128,23 +187,23 @@ Yes, you can easily use your theme’s color palette for a consistent design acr
 = 1.4.5 =
 * Fixed: CSS sanitization issue is fixed
 
-= 1.4.4 = 
+= 1.4.4 =
 * CSS output is escaped properly
 
-= 1.4.3 = 
-* Updated for wp review 
+= 1.4.3 =
+* Updated for wp review
 
 = 1.4.2 =
 * assets load optimized for classic & hybrid theme
 
-= 1.4.1 = 
-* Subheading and heading icon issues are fixed 
+= 1.4.1 =
+* Subheading and heading icon issues are fixed
 
 = 1.4.0 =
-* Compatibility check with the latest pro version 
+* Compatibility check with the latest pro version
 
-= 1.3.9 = 
-* Added: Heading icon style is added 
+= 1.3.9 =
+* Added: Heading icon style is added
 
 = 1.3.8 =
 * Fixed: Uncaught TypeError: Cannot read properties of undefined (reading 'length')
@@ -170,20 +229,21 @@ Yes, you can easily use your theme’s color palette for a consistent design acr
 = 1.3.2 =
 * Fixed: SVG icon color issue
 
-= 1.3.1 = 
+= 1.3.1 =
 * Fixed: PHP Fatal Errors
+
 = 1.3.0 =
 * New Feature: Nested Accordion
 * New Feature: Allow to close all accordion items
 * New Feature: Able to close accordion in editor view
-* New Feature: Responsive device support 
+* New Feature: Responsive device support
 * New Feature: Accessibility improvements
 * New Feature: Added 50+ SVG icons for active & inactive accordion
 * New Feature: Typography options for accordion title
 * Improved: Add new accordion item button
 * Improved: Title and icon gap option
 * Fixed: multiple accordion items opened at a time issue
-* Support: Gutenberg Built-in custom Class for block 
+* Support: Gutenberg Built-in custom Class for block
 * Support: Gutenberg built-in anchor for block
 * Removed: Custom option for adding custom class to the block
 * Removed: Custom option for adding custom ID to the block
@@ -194,10 +254,10 @@ Yes, you can easily use your theme’s color palette for a consistent design acr
 
 = 1.2.1 =
 * Fixed: Accordion Initial Editor style issues
-* Update: Version compatible with WordPress 6.4.x 
+* Update: Version compatible with WordPress 6.4.x
 
 = 1.1.0 =
-* Fixed: Styles related PHP errors are fixed 
+* Fixed: Styles related PHP errors are fixed
 * New Feature: multiple accordion items opened at a time
 
 = 1.0.4 =
@@ -215,3 +275,5 @@ Yes, you can easily use your theme’s color palette for a consistent design acr
 
 == Upgrade Notice ==
 
+= 1.5.2 =
+Accessibility and performance release. Fixes duplicate panel IDs when several accordions share a page, adds full keyboard navigation, and keeps content readable without JavaScript and in print. Your saved content is not changed.
