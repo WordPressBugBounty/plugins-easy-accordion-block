@@ -142,10 +142,84 @@
 		} );
 	}
 
+	/**
+	 * Feature toggles on the Settings tab. Each checkbox POSTs its new state
+	 * and shows a short saved / failed message; on failure it reverts.
+	 */
+	function initFeatureToggles() {
+		if ( ! settings.ajaxUrl || ! settings.nonce ) {
+			return;
+		}
+
+		var inputs = document.querySelectorAll( '[data-esab-toggle]' );
+
+		Array.prototype.forEach.call( inputs, function ( input ) {
+			var wrap = input.closest( '.esab-toggle' );
+			var status = wrap
+				? wrap.querySelector( '.esab-toggle__status' )
+				: null;
+
+			input.addEventListener( 'change', function () {
+				var key = input.getAttribute( 'data-esab-toggle' );
+				var value = input.checked ? '1' : '0';
+
+				input.disabled = true;
+				if ( status ) {
+					status.textContent = '';
+				}
+
+				var body = new URLSearchParams();
+				body.append( 'action', 'esab_save_settings' );
+				body.append( 'nonce', settings.nonce );
+				body.append( 'key', key );
+				body.append( 'value', value );
+
+				fetch( settings.ajaxUrl, {
+					method: 'POST',
+					credentials: 'same-origin',
+					headers: {
+						'Content-Type': 'application/x-www-form-urlencoded',
+					},
+					body: body.toString(),
+				} )
+					.then( function ( response ) {
+						if ( ! response.ok ) {
+							throw new Error( 'HTTP ' + response.status );
+						}
+						return response.json();
+					} )
+					.then( function ( json ) {
+						if ( ! json || ! json.success ) {
+							throw new Error( 'rejected' );
+						}
+						if ( status ) {
+							status.textContent =
+								( settings.i18n && settings.i18n.saved ) || 'Saved';
+							window.setTimeout( function () {
+								status.textContent = '';
+							}, 2000 );
+						}
+					} )
+					.catch( function () {
+						input.checked = ! input.checked;
+						if ( status ) {
+							status.textContent =
+								( settings.i18n && settings.i18n.saveFailed ) ||
+								'Could not save';
+						}
+					} )
+					.finally( function () {
+						input.disabled = false;
+					} );
+			} );
+		} );
+	}
+
 	function init() {
 		initAccordions();
 		initSetupSteps();
 		initCopyButtons();
+		initFeatureToggles();
 	}
 
 	if ( 'loading' === document.readyState ) {

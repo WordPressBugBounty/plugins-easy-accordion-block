@@ -76,6 +76,8 @@ class Esab_Admin {
                 'i18n'    => [
                     'copied'     => __( 'Copied', 'easy-accordion-block' ),
                     'copyFailed' => __( 'Press Ctrl/Cmd + C to copy', 'easy-accordion-block' ),
+                    'saved'      => __( 'Saved', 'easy-accordion-block' ),
+                    'saveFailed' => __( 'Could not save — try again', 'easy-accordion-block' ),
                 ],
             ]
         );
@@ -172,7 +174,7 @@ class Esab_Admin {
         // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only tab switch.
         $tab = isset( $_GET['tab'] ) ? sanitize_key( wp_unslash( $_GET['tab'] ) ) : 'dashboard';
 
-        $allowed = [ 'dashboard', 'help' ];
+        $allowed = [ 'dashboard', 'settings', 'help' ];
         if ( self::is_pro() ) {
             $allowed[] = 'license';
         }
@@ -462,6 +464,7 @@ class Esab_Admin {
 
         $tabs = [
             'dashboard' => __( 'Dashboard', 'easy-accordion-block' ),
+            'settings'  => __( 'Settings', 'easy-accordion-block' ),
             'help'      => __( 'Help & Support', 'easy-accordion-block' ),
         ];
 
@@ -471,57 +474,75 @@ class Esab_Admin {
         ?>
         <div class="esab-admin">
             <header class="esab-topbar">
-                <div class="esab-brand">
-                    <span class="esab-brand__mark"><?php self::the_icon( 'rows-3', 22 ); ?></span>
-                    <span class="esab-brand__text">
-                        <span class="esab-brand__row">
-                            <span class="esab-brand__name"><?php echo esc_html( $plugin_name ); ?></span>
-                            <span class="esab-badge">v<?php echo esc_html( ESAB_VERSION ); ?></span>
+                <div class="esab-topbar__inner">
+                    <div class="esab-brand">
+                        <span class="esab-brand__mark"><?php self::the_icon( 'rows-3', 22 ); ?></span>
+                        <span class="esab-brand__text">
+                            <span class="esab-brand__row">
+                                <span class="esab-brand__name"><?php echo esc_html( $plugin_name ); ?></span>
+                                <span class="esab-badge">v<?php echo esc_html( ESAB_VERSION ); ?></span>
+                            </span>
+                            <span class="esab-brand__tagline">
+                                <?php esc_html_e( 'Accordions & FAQs for the Gutenberg editor', 'easy-accordion-block' ); ?>
+                            </span>
                         </span>
-                        <span class="esab-brand__tagline">
-                            <?php esc_html_e( 'Accordions & FAQs for the Gutenberg editor', 'easy-accordion-block' ); ?>
-                        </span>
-                    </span>
+                    </div>
+                    <nav class="esab-topbar__actions">
+                        <a class="esab-btn esab-btn--ghost" href="<?php echo esc_url( self::link( 'docs' ) ); ?>" target="_blank" rel="noopener noreferrer">
+                            <?php self::the_icon( 'book-open', 15 ); ?>
+                            <span><?php esc_html_e( 'Documentation', 'easy-accordion-block' ); ?></span>
+                        </a>
+                        <a class="esab-btn esab-btn--ghost" href="<?php echo esc_url( self::tab_url( 'help' ) ); ?>">
+                            <?php self::the_icon( 'life-buoy', 15 ); ?>
+                            <span><?php esc_html_e( 'Support', 'easy-accordion-block' ); ?></span>
+                        </a>
+                        <?php if ( $is_pro ) : ?>
+                            <a class="esab-btn esab-btn--primary" href="<?php echo esc_url( self::link( 'demos' ) ); ?>" target="_blank" rel="noopener noreferrer">
+                                <?php self::the_icon( 'crown', 15 ); ?>
+                                <span><?php esc_html_e( 'Explore Demos', 'easy-accordion-block' ); ?></span>
+                            </a>
+                        <?php else : ?>
+                            <a class="esab-btn esab-btn--primary" href="<?php echo esc_url( self::link( 'pricing' ) ); ?>" target="_blank" rel="noopener noreferrer">
+                                <?php self::the_icon( 'zap', 15 ); ?>
+                                <span><?php esc_html_e( 'Upgrade to Pro', 'easy-accordion-block' ); ?></span>
+                            </a>
+                        <?php endif; ?>
+                    </nav>
                 </div>
-                <nav class="esab-topbar__actions">
-                    <a class="esab-btn esab-btn--ghost" href="<?php echo esc_url( self::link( 'docs' ) ); ?>" target="_blank" rel="noopener noreferrer">
-                        <?php self::the_icon( 'book-open', 15 ); ?>
-                        <span><?php esc_html_e( 'Documentation', 'easy-accordion-block' ); ?></span>
-                    </a>
-                    <a class="esab-btn esab-btn--ghost" href="<?php echo esc_url( self::tab_url( 'help' ) ); ?>">
-                        <?php self::the_icon( 'life-buoy', 15 ); ?>
-                        <span><?php esc_html_e( 'Support', 'easy-accordion-block' ); ?></span>
-                    </a>
-                    <?php if ( $is_pro ) : ?>
-                        <a class="esab-btn esab-btn--primary" href="<?php echo esc_url( self::link( 'demos' ) ); ?>" target="_blank" rel="noopener noreferrer">
-                            <?php self::the_icon( 'crown', 15 ); ?>
-                            <span><?php esc_html_e( 'Explore Demos', 'easy-accordion-block' ); ?></span>
-                        </a>
-                    <?php else : ?>
-                        <a class="esab-btn esab-btn--primary" href="<?php echo esc_url( self::link( 'pricing' ) ); ?>" target="_blank" rel="noopener noreferrer">
-                            <?php self::the_icon( 'zap', 15 ); ?>
-                            <span><?php esc_html_e( 'Upgrade to Pro', 'easy-accordion-block' ); ?></span>
-                        </a>
-                    <?php endif; ?>
-                </nav>
             </header>
 
             <nav class="esab-tabs">
-                <?php foreach ( $tabs as $slug => $label ) : ?>
-                    <a
-                        class="esab-tabs__item<?php echo $slug === $tab ? ' is-active' : ''; ?>"
-                        href="<?php echo esc_url( self::tab_url( $slug ) ); ?>"
-                        <?php echo $slug === $tab ? ' aria-current="page"' : ''; ?>
-                    >
-                        <?php echo esc_html( $label ); ?>
-                    </a>
-                <?php endforeach; ?>
+                <div class="esab-tabs__inner">
+                    <?php foreach ( $tabs as $slug => $label ) : ?>
+                        <a
+                            class="esab-tabs__item<?php echo $slug === $tab ? ' is-active' : ''; ?>"
+                            href="<?php echo esc_url( self::tab_url( $slug ) ); ?>"
+                            <?php echo $slug === $tab ? ' aria-current="page"' : ''; ?>
+                        >
+                            <?php echo esc_html( $label ); ?>
+                        </a>
+                    <?php endforeach; ?>
+                </div>
             </nav>
+
+            <?php
+            /**
+             * Fires between the tab nav and the tab body.
+             *
+             * Lets the Pro add-on drop in page-wide notices (e.g. an
+             * unactivated license) without them landing above the header.
+             *
+             * @param string $tab Current tab slug.
+             */
+            do_action( 'esab_admin_before_body', $tab );
+            ?>
 
             <main class="esab-body">
                 <?php
                 if ( 'help' === $tab ) {
                     require ESAB_PATH . 'inc/Admin/views/help-support.php';
+                } elseif ( 'settings' === $tab ) {
+                    require ESAB_PATH . 'inc/Admin/views/settings.php';
                 } elseif ( 'license' === $tab ) {
                     echo '<div class="esab-card esab-card--pad esab-license">';
                     do_action( 'esab_license_tab' );

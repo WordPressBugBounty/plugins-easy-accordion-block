@@ -33,7 +33,8 @@
     "esab/shVisibleOn": "shVisibleOn",
     "esab/badgeVPosition": "badgeVPosition",
     "esab/badgeHPosition": "badgeHPosition",
-    "esab/enableHeadingIcon": "enableHeadingIcon"
+    "esab/enableHeadingIcon": "enableHeadingIcon",
+    "esab/enableDeepLinking": "enableDeepLinking"
   },
   "textdomain": "easy-accordion-block",
   "editorScript": "file:./index.js",

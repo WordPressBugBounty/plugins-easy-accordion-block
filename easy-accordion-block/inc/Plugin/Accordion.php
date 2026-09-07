@@ -40,11 +40,13 @@ if( ! class_exists( 'Esab_Accordion' ) ) {
          * Include all necessary files
          */
         public function includes() {
+            require_once ESAB_PATH . 'inc/Plugin/Settings.php';
             require_once ESAB_PATH . 'inc/Plugin/Enqueue.php';
             require_once ESAB_PATH . 'inc/Plugin/Category.php';
             require_once ESAB_PATH . 'inc/Plugin/Fonts.php';
             require_once ESAB_PATH . 'inc/Plugin/Register.php';
             require_once ESAB_PATH . 'inc/Plugin/Style.php';
+            require_once ESAB_PATH . 'inc/Plugin/Schema.php';
             require_once ESAB_PATH . 'inc/Plugin/Patterns.php';
         }
         

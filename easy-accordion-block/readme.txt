@@ -3,7 +3,7 @@ Contributors: binsaifullah
 Tags: accordion, faq, faqs, accordion block, collapsible content
 Requires at least: 6.6
 Tested up to: 7.1
-Stable tag: 1.5.2
+Stable tag: 1.5.3
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -165,6 +165,11 @@ Yes. The interface uses Gutenberg's own components, so it behaves like the rest 
 
 == Changelog ==
 
+= 1.5.3 =
+* Added (Pro): Schema Markup — output FAQPage structured data per accordion, right from the block's own sidebar
+* Added (Pro): Deep Linking — give every item a shareable anchor; opening a URL that ends in “#your-question” expands that item and scrolls to it
+* Changed: Schema Markup and Deep Linking moved from the global Settings page into per-block Pro controls, so each accordion can opt in on its own
+
 = 1.5.2 =
 * Fixed: Accordion panels could share the same ID when more than one accordion was on a page, breaking screen-reader announcements
 * Fixed: Open All / Close All triggered a large number of redundant animations on long lists
@@ -274,6 +279,9 @@ Yes. The interface uses Gutenberg's own components, so it behaves like the rest 
 * Initial Release
 
 == Upgrade Notice ==
+
+= 1.5.3 =
+Adds two Pro features: Schema Markup (per-accordion FAQPage structured data) and Deep Linking (shareable per-item anchors). Both now live in the block's own sidebar instead of the global Settings page. Your saved content is not changed.
 
 = 1.5.2 =
 Accessibility and performance release. Fixes duplicate panel IDs when several accordions share a page, adds full keyboard navigation, and keeps content readable without JavaScript and in print. Your saved content is not changed.
