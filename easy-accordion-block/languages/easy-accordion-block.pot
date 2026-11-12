@@ -1,22 +1,22 @@
-# Copyright (C) 2025 Zakaria Binsaifullah
+# Copyright (C) 2026 Binsaifullah
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Easy Accordion Block 1.3.4\n"
+"Project-Id-Version: Easy Accordion Block 1.6.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/easy-accordion-block\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-02-03T10:12:18+00:00\n"
+"POT-Creation-Date: 2026-11-12T08:30:40+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.10.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: easy-accordion-block\n"
 
 #. Plugin Name of the plugin
 #: plugin.php
-#: inc/Admin/Admin.php:67
+#: inc/Admin/Admin.php:463
 msgid "Easy Accordion Block"
 msgstr ""
 
@@ -27,636 +27,1373 @@ msgstr ""
 
 #. Author of the plugin
 #: plugin.php
-msgid "Zakaria Binsaifullah"
+msgid "Binsaifullah"
 msgstr ""
 
-#. Author URI of the plugin
-#: plugin.php
-msgid "https://makegutenblock.com"
+#: inc/Admin/Admin.php:77
+msgid "Copied"
 msgstr ""
 
-#: inc/Admin/Admin.php:49
-#: inc/Admin/Admin.php:50
+#: inc/Admin/Admin.php:78
+msgid "Press Ctrl/Cmd + C to copy"
+msgstr ""
+
+#: inc/Admin/Admin.php:79
+msgid "Saved"
+msgstr ""
+
+#: inc/Admin/Admin.php:80
+msgid "Could not save — try again"
+msgstr ""
+
+#: inc/Admin/Admin.php:92
+#: inc/Admin/Admin.php:93
+#: src/blocks/accordion/edit.js:87
 msgid "Easy Accordion"
 msgstr ""
 
-#: inc/Admin/Admin.php:70
-msgid "Easy Accordion Block is a Gutenberg block plugin that allows you to create accordion blocks with ease in Gutenberg Editor without any coding knowledge"
+#: inc/Admin/Admin.php:226
+msgid "Install & activate the plugin"
 msgstr ""
 
-#: inc/Admin/Admin.php:74
-msgid "See Demos"
+#: inc/Admin/Admin.php:227
+msgid "Easy Accordion Block is running on this site."
 msgstr ""
 
-#: inc/Admin/Admin.php:84
-msgid "Help and Support"
+#: inc/Admin/Admin.php:236
+msgid "Add your first accordion block"
 msgstr ""
 
-#: inc/Admin/Admin.php:93
-msgid "Video Tutorial"
+#: inc/Admin/Admin.php:237
+msgid "Open any post or page and search for “Accordion”."
 msgstr ""
 
-#: inc/Admin/Admin.php:96
-msgid "Watch the video tutorial to learn how to use the plugin. It will help you start your own design quickly."
+#: inc/Admin/Admin.php:239
+#: inc/Admin/Admin.php:249
+#: inc/Admin/Admin.php:259
+msgid "Set up"
 msgstr ""
 
-#: inc/Admin/Admin.php:105
-msgid "Get Support"
+#: inc/Admin/Admin.php:246
+msgid "Start from a premade pattern"
 msgstr ""
 
-#: inc/Admin/Admin.php:108
-msgid "If you find any issue or have any suggestion, please let me know."
+#: inc/Admin/Admin.php:247
+msgid "Insert a ready-made accordion layout, then make it yours."
 msgstr ""
 
-#: inc/Admin/Admin.php:111
+#: inc/Admin/Admin.php:256
+msgid "Watch the 3-minute tutorial"
+msgstr ""
+
+#: inc/Admin/Admin.php:257
+msgid "See a page go from empty to a live FAQ section."
+msgstr ""
+
+#: inc/Admin/Admin.php:303
+msgid "Plugin version"
+msgstr ""
+
+#: inc/Admin/Admin.php:308
+msgid "WordPress"
+msgstr ""
+
+#: inc/Admin/Admin.php:313
+msgid "PHP"
+msgstr ""
+
+#: inc/Admin/Admin.php:318
+msgid "Active theme"
+msgstr ""
+
+#: inc/Admin/Admin.php:323
+msgid "Memory limit"
+msgstr ""
+
+#: inc/Admin/Admin.php:328
+msgid "Block editor"
+msgstr ""
+
+#: inc/Admin/Admin.php:329
+msgid "Enabled"
+msgstr ""
+
+#: inc/Admin/Admin.php:329
+msgid "Disabled"
+msgstr ""
+
+#: inc/Admin/Admin.php:462
+msgid "Easy Accordion Block Pro"
+msgstr ""
+
+#: inc/Admin/Admin.php:466
+msgid "Dashboard"
+msgstr ""
+
+#: inc/Admin/Admin.php:467
+msgid "Settings"
+msgstr ""
+
+#: inc/Admin/Admin.php:468
+msgid "Help & Support"
+msgstr ""
+
+#: inc/Admin/Admin.php:472
+msgid "License"
+msgstr ""
+
+#: inc/Admin/Admin.php:486
+msgid "Accordions & FAQs for the Gutenberg editor"
+msgstr ""
+
+#: inc/Admin/Admin.php:493
+msgid "Documentation"
+msgstr ""
+
+#: inc/Admin/Admin.php:497
 msgid "Support"
 msgstr ""
 
-#: inc/Admin/Admin.php:116
-msgid "Spread Your Love"
+#: inc/Admin/Admin.php:502
+msgid "Explore Demos"
 msgstr ""
 
-#: inc/Admin/Admin.php:119
-msgid "If you like this plugin, please share your opinion"
+#: inc/Admin/Admin.php:507
+#: inc/Admin/views/help-support.php:236
+#: src/blocks/accordion/inspector.js:338
+msgid "Upgrade to Pro"
 msgstr ""
 
-#: inc/Admin/Admin.php:122
-msgid "Rate the Plugin"
+#: inc/Admin/Cartlet_Card.php:139
+msgid "Activate Cartlet"
 msgstr ""
 
-#: inc/Admin/Admin.php:127
-msgid "Similar Blocks"
+#: inc/Admin/Cartlet_Card.php:143
+msgid "Install Cartlet free"
 msgstr ""
 
-#: inc/Admin/Admin.php:130
-msgid "Want to get more similar blocks, please visit my website"
+#: inc/Admin/Cartlet_Card.php:150
+msgid "Dismiss this recommendation"
 msgstr ""
 
-#: inc/Admin/Admin.php:133
-msgid "Visit Our Website"
+#: inc/Admin/Cartlet_Card.php:152
+msgid "Recommended for your store"
 msgstr ""
 
-#: inc/Admin/Admin.php:140
-msgid "Need to Hire Us?"
+#: inc/Admin/Cartlet_Card.php:156
+msgid "Cartlet: share & save carts"
 msgstr ""
 
-#: inc/Admin/Admin.php:143
-msgid "Available for any freelance projects. Please feel free to share your project detail with us."
+#: inc/Admin/Cartlet_Card.php:157
+msgid "Free, from the team behind this plugin"
 msgstr ""
 
-#: inc/Admin/Admin.php:147
-msgid "Send Email"
+#: inc/Admin/Cartlet_Card.php:160
+msgid "Selling with WooCommerce? Let shoppers share their cart in one tap, or keep it for later."
 msgstr ""
 
-#: inc/Admin/Admin.php:150
-msgid "Send Message"
+#: inc/Admin/Cartlet_Card.php:162
+msgid "Cart as a link, QR code or WhatsApp message"
 msgstr ""
 
-#: inc/Plugin/Category.php:35
-#: src/blocks/accordion/accordion-child/accordion.js:20
-msgid "Accordion"
+#: inc/Admin/Cartlet_Card.php:163
+msgid "Saved carts, even for guests"
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/accordion.js:21
-msgid "Acts as Child Block for Easy Accordion Block"
+#: inc/Admin/Cartlet_Card.php:164
+msgid "Ready-made cart links with a coupon"
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/edit.js:111
-#: src/blocks/accordion/accordion-child/edit.js:150
-msgid "heading…."
+#: inc/Admin/views/dashboard.php:27
+msgid "How do I add an accordion to a page?"
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/edit.js:122
-msgid "write subheading."
+#: inc/Admin/views/dashboard.php:28
+msgid "Add the Easy Accordion block, then type your content — it’s a normal block canvas."
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/edit.js:162
-#: src/blocks/accordion/accordion-child/save.js:123
-msgid "collapsed icon"
+#: inc/Admin/views/dashboard.php:31
+msgid "Can I keep one item open by default?"
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/edit.js:171
-#: src/blocks/accordion/accordion-child/save.js:132
-msgid "expanded icon"
+#: inc/Admin/views/dashboard.php:32
+msgid "Yes. Turn on the initially-open option for any item and it renders expanded on first paint."
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/edit.js:186
-msgid "type content or press / to add block.."
+#: inc/Admin/views/dashboard.php:35
+#: inc/Admin/views/help-support.php:58
+msgid "Does it support nested accordions?"
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/inspector.js:50
-#: src/blocks/accordion/accordion-child/inspector.js:58
-msgid "Disable this accordion"
+#: inc/Admin/views/dashboard.php:36
+msgid "Yes. Drop another Easy Accordion block inside a panel and nest as deep as your layout needs."
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/inspector.js:53
-#: src/blocks/accordion/accordion-child/inspector.js:59
-msgid "Disabled all activities. Works on frontend only"
+#: inc/Admin/views/dashboard.php:43
+msgid "Lightweight & fast"
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/inspector.js:64
-msgid "Make it active on Load"
+#: inc/Admin/views/dashboard.php:44
+msgid "Optimized code that never slows your site down."
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/inspector.js:67
-msgid "You have made it Active on Load"
+#: inc/Admin/views/dashboard.php:48
+msgid "Native interface"
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/inspector.js:71
-#: src/blocks/accordion/accordion-child/inspector.js:77
-msgid "Enable link"
+#: inc/Admin/views/dashboard.php:49
+msgid "Built with Gutenberg’s own components."
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/inspector.js:82
-msgid "Link"
+#: inc/Admin/views/dashboard.php:53
+msgid "Fully responsive"
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/inspector.js:84
-msgid "Wrapper"
+#: inc/Admin/views/dashboard.php:54
+msgid "Mobile-first layout with full accessibility support."
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/inspector.js:87
-msgid "Only Text"
+#: inc/Admin/views/dashboard.php:58
+msgid "FAQ schema markup"
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/inspector.js:88
-msgid "Whole Head"
+#: inc/Admin/views/dashboard.php:59
+msgid "A dedicated schema builder that boosts SEO."
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/inspector.js:89
-msgid "Additional Icon"
+#: inc/Admin/views/dashboard.php:63
+msgid "Nested accordions"
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/inspector.js:95
-msgid "URL"
+#: inc/Admin/views/dashboard.php:64
+msgid "Build complex layouts with nested items."
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/inspector.js:108
-msgid "Select Link Icon"
+#: inc/Admin/views/dashboard.php:68
+msgid "Keyboard accessible"
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/inspector.js:117
-#: src/blocks/accordion/accordion-child/inspector.js:207
-msgid "Badge"
+#: inc/Admin/views/dashboard.php:69
+msgid "Full ARIA roles and keyboard navigation."
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/inspector.js:121
-msgid "Badge Text"
+#: inc/Admin/views/dashboard.php:74
+msgid "Instant search across items"
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/inspector.js:122
-msgid "Skip this field if you do not want to show badge"
+#: inc/Admin/views/dashboard.php:75
+msgid "Load more pagination"
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/inspector.js:133
-msgid "Icon Size"
+#: inc/Admin/views/dashboard.php:76
+msgid "Badges for accordion items"
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/inspector.js:142
-#: src/blocks/accordion/inspector.js:1083
-msgid "Icon Gap"
+#: inc/Admin/views/dashboard.php:77
+msgid "3 event activators"
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/inspector.js:154
-#: src/blocks/accordion/accordion-child/inspector.js:170
-#: src/blocks/accordion/accordion-child/inspector.js:186
-msgid "Icon Color"
+#: inc/Admin/views/dashboard.php:78
+msgid "Custom icon upload"
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/inspector.js:209
-#: src/blocks/accordion/inspector.js:804
-#: src/blocks/accordion/inspector.js:849
-#: src/blocks/accordion/inspector.js:1327
-msgid "Typography"
+#: inc/Admin/views/dashboard.php:79
+msgid "Link to any accordion"
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/inspector.js:214
-#: src/blocks/accordion/inspector.js:1066
-msgid "Gap"
+#: inc/Admin/views/dashboard.php:80
+msgid "Disable specific accordions"
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/inspector.js:235
-#: src/blocks/accordion/inspector.js:632
-#: src/blocks/accordion/inspector.js:720
-#: src/blocks/accordion/inspector.js:989
-#: src/blocks/accordion/inspector.js:1150
-#: src/blocks/accordion/inspector.js:1244
-#: src/blocks/accordion/inspector.js:1342
-#: src/blocks/accordion/inspector.js:1468
-msgid "Border Radius"
+#: inc/Admin/views/dashboard.php:86
+msgid "Get support"
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/inspector.js:247
-#: src/blocks/accordion/inspector.js:732
-#: src/blocks/accordion/inspector.js:1001
-#: src/blocks/accordion/inspector.js:1162
-#: src/blocks/accordion/inspector.js:1256
-#: src/blocks/accordion/inspector.js:1354
-#: src/blocks/accordion/inspector.js:1480
-msgid "Padding"
+#: inc/Admin/views/dashboard.php:87
+msgid "Report an issue or ask a question"
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/inspector.js:259
-#: src/blocks/accordion/inspector.js:809
-#: src/blocks/accordion/inspector.js:822
-#: src/blocks/accordion/inspector.js:835
-#: src/blocks/accordion/inspector.js:866
-#: src/blocks/accordion/inspector.js:882
-#: src/blocks/accordion/inspector.js:898
-#: src/blocks/accordion/inspector.js:936
-#: src/blocks/accordion/inspector.js:949
-#: src/blocks/accordion/inspector.js:962
-#: src/blocks/accordion/inspector.js:1177
-#: src/blocks/accordion/inspector.js:1208
-#: src/blocks/accordion/inspector.js:1271
-#: src/blocks/accordion/inspector.js:1302
-#: src/blocks/accordion/inspector.js:1381
-#: src/blocks/accordion/inspector.js:1412
-#: src/blocks/accordion/inspector.js:1437
-#: src/components/boxshadow-control/index.js:134
-msgid "Color"
+#: inc/Admin/views/dashboard.php:93
+#: inc/Admin/views/help-support.php:101
+msgid "Rate the plugin"
 msgstr ""
 
-#: src/blocks/accordion/accordion-child/inspector.js:264
-#: src/blocks/accordion/inspector.js:747
-#: src/blocks/accordion/inspector.js:769
-#: src/blocks/accordion/inspector.js:791
-#: src/blocks/accordion/inspector.js:1028
-#: src/blocks/accordion/inspector.js:1050
-#: src/blocks/accordion/inspector.js:1186
-#: src/blocks/accordion/inspector.js:1217
-#: src/blocks/accordion/inspector.js:1280
-#: src/blocks/accordion/inspector.js:1311
-#: src/blocks/accordion/inspector.js:1390
-#: src/blocks/accordion/inspector.js:1421
-#: src/blocks/accordion/inspector.js:1446
-msgid "Background"
+#: inc/Admin/views/dashboard.php:94
+msgid "Leave a review on WordPress.org"
 msgstr ""
 
-#: src/blocks/accordion/constants/index.js:5
-msgid "Pallete 1"
+#: inc/Admin/views/dashboard.php:100
+msgid "Request a feature"
 msgstr ""
 
-#: src/blocks/accordion/constants/index.js:9
-msgid "Pallete 2"
+#: inc/Admin/views/dashboard.php:101
+msgid "Tell us what to build next"
 msgstr ""
 
-#: src/blocks/accordion/constants/index.js:13
-msgid "Pallete 3"
+#: inc/Admin/views/dashboard.php:110
+msgid "GutenLayouts"
 msgstr ""
 
-#: src/blocks/accordion/edit.js:141
-msgid "Add Accordion"
+#: inc/Admin/views/dashboard.php:111
+msgid "Patterns and full-page templates"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:132
-msgid "Allow mulitple items open"
+#: inc/Admin/views/dashboard.php:116
+msgid "GutSlider"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:141
-msgid "Mulitple items can be opened."
+#: inc/Admin/views/dashboard.php:117
+msgid "A powerful slider block"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:142
-msgid "Open nly one item at a time."
+#: inc/Admin/views/dashboard.php:122
+msgid "Easy Testimonial"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:147
-msgid "Allow all items to be closed"
+#: inc/Admin/views/dashboard.php:123
+msgid "Social proof blocks that convert"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:156
-msgid "All items can be closed."
+#: inc/Admin/views/dashboard.php:131
+msgid "Welcome back"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:157
-msgid "Kepp one item opened."
+#: inc/Admin/views/dashboard.php:133
+msgid "Build accordions and FAQs, right inside Gutenberg."
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:163
-#: src/blocks/accordion/inspector.js:176
-msgid "Badge for Accordion Item"
+#: inc/Admin/views/dashboard.php:136
+msgid "No shortcodes, no page builders, no code. Everything is native blocks — so your accordions look and behave exactly like the rest of your site."
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:170
-#: src/blocks/accordion/inspector.js:177
-msgid "badge for each accordion item"
+#: inc/Admin/views/dashboard.php:141
+msgid "Create your first accordion"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:184
-#: src/blocks/accordion/inspector.js:197
-msgid "Enable Load More"
+#: inc/Admin/views/dashboard.php:145
+msgid "Watch the 3-min tour"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:191
-#: src/blocks/accordion/inspector.js:198
-msgid "Doesn't work for nested accordion"
+#: inc/Admin/views/dashboard.php:174
+msgid "Finish setting up"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:205
-#: src/blocks/accordion/inspector.js:215
-msgid "Enable Instant Search"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:221
-#: src/blocks/accordion/inspector.js:233
-msgid "Enable Open/Close All Button"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:241
-msgid "Search and Buttons in same line"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:251
-msgid "Reverse position"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:262
-msgid "Activator"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:264
-msgid "Select Type"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:269
-msgid "Click"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:273
-#: src/components/switcher-control/index.js:19
-msgid "Hover"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:278
-msgid "Autoplay"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:287
-msgid "Speed"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:302
-msgid "Speed in miliseconds:"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:305
-msgid "Enable Infinite Loop"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:317
-#: src/blocks/accordion/inspector.js:1064
-msgid "Open/Close All Button"
-msgstr ""
+#. translators: %s: number of remaining onboarding steps.
+#: inc/Admin/views/dashboard.php:180
+#, php-format
+msgid "%s step left before your accordions are production-ready."
+msgid_plural "%s steps left before your accordions are production-ready."
+msgstr[0] ""
+msgstr[1] ""
 
-#: src/blocks/accordion/inspector.js:322
-#: src/blocks/accordion/inspector.js:345
-#: src/blocks/accordion/inspector.js:491
-msgid "Text"
+#: inc/Admin/views/dashboard.php:184
+msgid "You’re all set — every step is complete."
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:329
-#: src/blocks/accordion/inspector.js:367
-msgid "Open All"
+#. translators: 1: completed steps, 2: total steps.
+#: inc/Admin/views/dashboard.php:194
+#, php-format
+msgid "%1$s of %2$s complete"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:332
-msgid "Select Icon"
+#: inc/Admin/views/dashboard.php:238
+msgid "Watch the video tutorial on YouTube"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:352
-#: src/blocks/accordion/inspector.js:371
-msgid "Close All"
+#: inc/Admin/views/dashboard.php:243
+msgid "Video tutorial · 3 min"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:355
-msgid "Icon"
+#: inc/Admin/views/dashboard.php:244
+msgid "From empty page to a live FAQ section"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:378
-#: src/blocks/accordion/inspector.js:705
-msgid "Head"
+#: inc/Admin/views/dashboard.php:246
+msgid "Watch how to insert the block, style it to match your theme, and publish an accordion that works on every device."
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:381
-msgid "Heading Tag"
+#: inc/Admin/views/dashboard.php:249
+msgid "Watch on YouTube"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:393
-#: src/blocks/accordion/inspector.js:403
-msgid "Enable Subheading"
+#: inc/Admin/views/dashboard.php:258
+msgid "What’s included"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:410
-msgid "Subheading Tag"
+#: inc/Admin/views/dashboard.php:259
+msgid "Every block ships free with the plugin."
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:421
-msgid "Visible On"
+#: inc/Admin/views/dashboard.php:262
+msgid "Browse all features"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:430
-msgid "Always"
+#: inc/Admin/views/dashboard.php:286
+#: src/blocks/accordion/inspector.js:303
+#: src/blocks/patterns/index.js:28
+#: src/components/buttons-group/index.js:43
+msgid "Pro"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:434
-#: src/blocks/accordion/inspector.js:463
+#: inc/Admin/views/dashboard.php:291
+#: src/blocks/accordion/inspector.js:465
+#: src/blocks/accordion/inspector.js:495
 #: src/components/switcher-control/index.js:15
 msgid "Active"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:442
-#: src/blocks/accordion/inspector.js:915
+#: inc/Admin/views/dashboard.php:293
+msgid "from $29/yr"
+msgstr ""
+
+#: inc/Admin/views/dashboard.php:301
+msgid "The full toolkit is unlocked"
+msgstr ""
+
+#: inc/Admin/views/dashboard.php:303
+msgid "Unlock the full toolkit"
+msgstr ""
+
+#: inc/Admin/views/dashboard.php:310
+msgid "Thanks for going Pro. Every feature below is available in your editor."
+msgstr ""
+
+#: inc/Admin/views/dashboard.php:312
+msgid "Seven more features for teams building serious content."
+msgstr ""
+
+#: inc/Admin/views/dashboard.php:328
+msgid "Explore the demos"
+msgstr ""
+
+#: inc/Admin/views/dashboard.php:333
+msgid "Get the Pro version"
+msgstr ""
+
+#: inc/Admin/views/dashboard.php:336
+msgid "14-day money-back guarantee"
+msgstr ""
+
+#: inc/Admin/views/dashboard.php:351
+msgid "Need a hand?"
+msgstr ""
+
+#: inc/Admin/views/dashboard.php:370
+msgid "More from GutenbergKits"
+msgstr ""
+
+#: inc/Admin/views/dashboard.php:371
+msgid "Blocks that pair well with this one."
+msgstr ""
+
+#: inc/Admin/views/help-support.php:17
+msgid "Create Support Ticket"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:18
+msgid "Create a support ticket to run one to one conversation."
+msgstr ""
+
+#: inc/Admin/views/help-support.php:19
+msgid "Create Ticket"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:25
+msgid "WhatsApp Group"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:26
+msgid "Join our WhatsApp Group to get instant reply for your questions."
+msgstr ""
+
+#: inc/Admin/views/help-support.php:27
+#: inc/Admin/views/help-support.php:35
+msgid "Join Now"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:33
+msgid "Telegram Group"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:34
+msgid "Send a direct message to us so that we can respond within a short time."
+msgstr ""
+
+#: inc/Admin/views/help-support.php:41
+msgid "Direct Mail"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:42
+msgid "Send a direct email to us so that we can respond within a short time."
+msgstr ""
+
+#: inc/Admin/views/help-support.php:43
+msgid "Send Email"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:50
+msgid "Can I use any content inside an accordion?"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:51
+msgid "Yes. Each accordion panel is a full block canvas, so you can nest paragraphs, images, columns, embeds — anything Gutenberg supports."
+msgstr ""
+
+#: inc/Admin/views/help-support.php:54
+msgid "Can I keep an accordion item open on page load?"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:55
+msgid "Yes. Enable the initially-open option on any item and it renders expanded on the first paint, with no layout shift."
+msgstr ""
+
+#: inc/Admin/views/help-support.php:59
+msgid "Yes. Add another Easy Accordion block inside a panel and nest as deep as your layout needs. Each level keeps its own settings."
+msgstr ""
+
+#: inc/Admin/views/help-support.php:62
+msgid "Will it match my theme’s color palette?"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:63
+msgid "By default the block inherits your theme’s colors and typography. You can override any of it — colors, spacing, borders, icons — from the block sidebar."
+msgstr ""
+
+#: inc/Admin/views/help-support.php:66
+msgid "Does it work with page builders?"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:67
+msgid "It is a native Gutenberg block, so it works anywhere the block editor runs, including page builders that can embed native blocks."
+msgstr ""
+
+#: inc/Admin/views/help-support.php:73
+msgid "Clear your cache"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:74
+msgid "Purge both the plugin cache and any CDN layer, then reload."
+msgstr ""
+
+#: inc/Admin/views/help-support.php:77
+msgid "Test with a default theme"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:78
+msgid "Switch to Twenty Twenty-Five to rule out theme conflicts."
+msgstr ""
+
+#: inc/Admin/views/help-support.php:81
+msgid "Disable other plugins"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:82
+msgid "Deactivate in batches to find a conflicting plugin fast."
+msgstr ""
+
+#: inc/Admin/views/help-support.php:89
+msgid "WordPress.org forum"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:90
+msgid "Public support threads"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:95
+msgid "Feature requests"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:96
+msgid "Vote on the roadmap"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:102
+msgid "Leave a 5-star review"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:107
+msgid "Changelog"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:108
+msgid "See what shipped recently"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:119
+msgid "Site URL"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:123
+msgid "How can we help?"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:125
+msgid "Pick a support channel below, or check the questions we get asked most — we answer every ticket within one business day."
+msgstr ""
+
+#: inc/Admin/views/help-support.php:135
+msgid "Get instant support"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:136
+msgid "Four ways to reach us — pick whichever is fastest for you."
+msgstr ""
+
+#: inc/Admin/views/help-support.php:139
+msgid "Visit support page"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:161
+msgid "Frequently asked questions"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:162
+msgid "The questions we get most often from plugin users."
+msgstr ""
+
+#: inc/Admin/views/help-support.php:186
+msgid "Before you open a ticket"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:187
+msgid "These three checks resolve most reported issues in under a minute."
+msgstr ""
+
+#: inc/Admin/views/help-support.php:209
+msgid "Priority support is active"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:211
+msgid "Priority support with Pro"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:218
+msgid "Your licence skips the queue — every ticket goes straight to a named engineer."
+msgstr ""
+
+#: inc/Admin/views/help-support.php:220
+msgid "Pro licence holders skip the queue and get a named engineer on every ticket."
+msgstr ""
+
+#: inc/Admin/views/help-support.php:226
+msgid "Pro first reply: under 2 hours"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:231
+msgid "Open a priority ticket"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:242
+msgid "Other ways to reach us"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:261
+msgid "System report"
+msgstr ""
+
+#: inc/Admin/views/help-support.php:262
+msgid "Attach this to your ticket so we can skip the back-and-forth."
+msgstr ""
+
+#: inc/Admin/views/help-support.php:277
+msgid "Copy system report"
+msgstr ""
+
+#: inc/Admin/views/settings.php:17
+msgid "Enhanced keyboard navigation"
+msgstr ""
+
+#: inc/Admin/views/settings.php:18
+msgid "Arrow-key / Home / End movement between headers and a visible focus ring, following the WAI-ARIA Accordion pattern. Screen-reader labelling stays on whether or not this is enabled."
+msgstr ""
+
+#: inc/Admin/views/settings.php:25
+msgid "Feature control"
+msgstr ""
+
+#: inc/Admin/views/settings.php:27
+msgid "Turn individual features on or off for the whole site. Changes save automatically and never affect content you have already published."
+msgstr ""
+
+#: inc/Plugin/Category.php:36
+#: src/blocks/accordion/accordion-child/accordion.js:22
+msgid "Accordion"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/accordion.js:23
+msgid "Acts as Child Block for Easy Accordion Block"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/edit.js:98
+#: src/blocks/accordion/accordion-child/save.js:69
+#: src/blocks/accordion/deprecated/v4child.js:113
+#: src/blocks/accordion/deprecated/v4child.js:158
+msgid "heading icon"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/edit.js:108
+msgid "heading…."
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/edit.js:120
+msgid "write subheading."
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/edit.js:132
+#: src/blocks/accordion/accordion-child/save.js:81
+#: src/blocks/accordion/deprecated/v4child.js:177
+msgid "collapsed icon"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/edit.js:133
+#: src/blocks/accordion/accordion-child/save.js:82
+#: src/blocks/accordion/deprecated/v4child.js:186
+msgid "expanded icon"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/edit.js:145
+msgid "type content or press / to add block.."
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:54
+msgid "Make it active on Load"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:57
+msgid "You have made it Active on Load"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:61
+#: src/blocks/accordion/inspector.js:974
+msgid "Heading Icon"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:69
+msgid "Disable this accordion"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:72
+msgid "Disabled all activities. Works on frontend only"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:77
+msgid "Enable link"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:84
+msgid "Link"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:86
+msgid "Wrapper"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:89
+msgid "Only Text"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:90
+msgid "Whole Head"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:91
+msgid "Additional Icon"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:97
+msgid "URL"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:110
+msgid "Select Link Icon"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:119
+#: src/blocks/accordion/accordion-child/inspector.js:249
+#: src/blocks/accordion/inspector.js:521
+msgid "Badge"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:123
+msgid "Badge Text"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:124
+msgid "Skip this field if you do not want to show badge"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:143
+#: src/blocks/accordion/inspector.js:668
+msgid "Unlock more features with Easy Accordion Block Pro"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:152
+#: src/blocks/accordion/inspector.js:677
+msgid "Get Pro"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:160
+#: src/blocks/accordion/inspector.js:685
+msgid "Free vs Pro"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:173
+msgid "Icon Size"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:182
+#: src/blocks/accordion/inspector.js:1232
+msgid "Icon Gap"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:194
+#: src/blocks/accordion/accordion-child/inspector.js:210
+#: src/blocks/accordion/accordion-child/inspector.js:226
+msgid "Icon Color"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:251
+#: src/blocks/accordion/inspector.js:927
+#: src/blocks/accordion/inspector.js:996
+#: src/blocks/accordion/inspector.js:1286
+#: src/blocks/accordion/inspector.js:1385
+#: src/blocks/accordion/inspector.js:1487
+msgid "Typography"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:256
+#: src/blocks/accordion/inspector.js:984
+#: src/blocks/accordion/inspector.js:1215
+msgid "Gap"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:277
+#: src/blocks/accordion/inspector.js:748
+#: src/blocks/accordion/inspector.js:842
+#: src/blocks/accordion/inspector.js:1138
+#: src/blocks/accordion/inspector.js:1304
+#: src/blocks/accordion/inspector.js:1403
+#: src/blocks/accordion/inspector.js:1505
+#: src/blocks/accordion/inspector.js:1631
+msgid "Border Radius"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:289
+#: src/blocks/accordion/inspector.js:854
+#: src/blocks/accordion/inspector.js:1150
+#: src/blocks/accordion/inspector.js:1316
+#: src/blocks/accordion/inspector.js:1415
+#: src/blocks/accordion/inspector.js:1517
+#: src/blocks/accordion/inspector.js:1643
+msgid "Padding"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:301
+#: src/blocks/accordion/inspector.js:935
+#: src/blocks/accordion/inspector.js:948
+#: src/blocks/accordion/inspector.js:961
+#: src/blocks/accordion/inspector.js:1016
+#: src/blocks/accordion/inspector.js:1032
+#: src/blocks/accordion/inspector.js:1048
+#: src/blocks/accordion/inspector.js:1085
+#: src/blocks/accordion/inspector.js:1098
+#: src/blocks/accordion/inspector.js:1111
+#: src/blocks/accordion/inspector.js:1331
+#: src/blocks/accordion/inspector.js:1362
+#: src/blocks/accordion/inspector.js:1430
+#: src/blocks/accordion/inspector.js:1461
+#: src/blocks/accordion/inspector.js:1544
+#: src/blocks/accordion/inspector.js:1575
+#: src/blocks/accordion/inspector.js:1600
+#: src/components/boxshadow-control/index.js:111
+msgid "Color"
+msgstr ""
+
+#: src/blocks/accordion/accordion-child/inspector.js:306
+#: src/blocks/accordion/inspector.js:869
+#: src/blocks/accordion/inspector.js:891
+#: src/blocks/accordion/inspector.js:913
+#: src/blocks/accordion/inspector.js:1177
+#: src/blocks/accordion/inspector.js:1199
+#: src/blocks/accordion/inspector.js:1340
+#: src/blocks/accordion/inspector.js:1371
+#: src/blocks/accordion/inspector.js:1439
+#: src/blocks/accordion/inspector.js:1470
+#: src/blocks/accordion/inspector.js:1553
+#: src/blocks/accordion/inspector.js:1584
+#: src/blocks/accordion/inspector.js:1609
+msgid "Background"
+msgstr ""
+
+#: src/blocks/accordion/constants/index.js:6
+msgid "Soft"
+msgstr ""
+
+#: src/blocks/accordion/constants/index.js:11
+#: src/components/typography/index.js:31
+msgid "Medium"
+msgstr ""
+
+#: src/blocks/accordion/constants/index.js:16
+msgid "Strong"
+msgstr ""
+
+#: src/blocks/accordion/edit.js:89
+msgid "Start with a ready-made pattern or build your own accordion from scratch."
+msgstr ""
+
+#: src/blocks/accordion/edit.js:107
+msgid "Browse Patterns"
+msgstr ""
+
+#: src/blocks/accordion/edit.js:109
+msgid "Pick a pre-designed layout and customize it."
+msgstr ""
+
+#: src/blocks/accordion/edit.js:133
+msgid "Start from Scratch"
+msgstr ""
+
+#: src/blocks/accordion/edit.js:135
+msgid "Begin with a blank accordion item."
+msgstr ""
+
+#: src/blocks/accordion/edit.js:214
+msgid "Add Accordion"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:139
+msgid "Allow mulitple items open"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:148
+msgid "Mulitple items can be opened."
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:149
+msgid "Open nly one item at a time."
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:154
+msgid "Allow all items to be closed"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:163
+msgid "All items can be closed."
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:164
+msgid "Kepp one item opened."
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:170
+msgid "Badge for Accordion Item"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:177
+msgid "badge for each accordion item"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:183
+msgid "Enable Load More"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:190
+msgid "Doesn't work for nested accordion"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:196
+msgid "Enable Instant Search"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:208
+msgid "Enable Open/Close All Button"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:221
+msgid "Search and Buttons in same line"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:231
+msgid "Reverse position"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:242
+msgid "Activator"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:244
+msgid "Select Type"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:249
+msgid "Click"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:253
+#: src/components/switcher-control/index.js:19
+msgid "Hover"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:258
+msgid "Autoplay"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:267
+msgid "Speed"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:282
+msgid "Speed in miliseconds:"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:285
+msgid "Enable Infinite Loop"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:302
+msgid "SEO & Linking"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:309
+msgid "Help your FAQs stand out in search results and let visitors share a link that opens the exact answer."
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:317
+msgid "Enable FAQ schema"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:318
+msgid "Adds FAQPage structured data so search engines can show your questions as rich results."
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:325
+msgid "Enable deep linking"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:326
+msgid "Opening a URL that ends in “#your-question” expands that item and scrolls to it."
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:343
+#: src/blocks/accordion/inspector.js:1213
+msgid "Open/Close All Button"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:348
+#: src/blocks/accordion/inspector.js:371
+#: src/blocks/accordion/inspector.js:569
+msgid "Text"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:355
+#: src/blocks/accordion/inspector.js:393
+msgid "Open All"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:358
+msgid "Select Icon"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:378
+#: src/blocks/accordion/inspector.js:397
+msgid "Close All"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:381
+msgid "Icon"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:404
+#: src/blocks/accordion/inspector.js:827
+msgid "Head"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:407
+msgid "Heading Tag"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:418
+msgid "Enable Heading Icon"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:428
+msgid "Enable Subheading"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:441
+msgid "Subheading Tag"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:452
+msgid "Visible On"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:461
+msgid "Always"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:473
+#: src/blocks/accordion/inspector.js:1064
 msgid "Icons"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:444
+#: src/blocks/accordion/inspector.js:475
 msgid "Change Icon Position"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:447
+#: src/blocks/accordion/inspector.js:478
 msgid "Icon is on the Left Side"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:448
+#: src/blocks/accordion/inspector.js:479
 msgid "Icon is on the Right Side"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:458
+#: src/blocks/accordion/inspector.js:490
 msgid "Accordion Icons"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:467
+#: src/blocks/accordion/inspector.js:499
 msgid "Inactive"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:474
+#: src/blocks/accordion/inspector.js:506
 msgid "Select Active Icon"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:481
+#: src/blocks/accordion/inspector.js:513
 msgid "Select Inactive Icon"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:489
-#: src/blocks/accordion/inspector.js:498
-#: src/blocks/accordion/inspector.js:1326
-msgid "Load More"
+#: src/blocks/accordion/inspector.js:523
+msgid "Vertical Position"
 msgstr ""
 
-#: src/blocks/accordion/inspector.js:503
-msgid "Initial Visible Items"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:511
-msgid "3"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:515
-msgid "Loading Type"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:524
-msgid "All"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:528
-msgid "Step"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:535
-msgid "Load Per Click"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:554
-#: src/blocks/accordion/inspector.js:1435
-msgid "Instant Search"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:556
-msgid "Placeholder"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:565
-msgid "Not Found Text"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:582
-msgid "Style as Nested Accordion"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:589
-msgid "It allows you to override the style for nested accordions."
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:592
-msgid "Container"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:594
-msgid "Items Gap"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:602
-#: src/blocks/accordion/inspector.js:851
-#: src/blocks/accordion/inspector.js:1013
-#: src/blocks/accordion/inspector.js:1123
-#: src/blocks/accordion/inspector.js:1366
-msgid "Margin"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:614
-msgid "Item"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:645
-msgid "Enable Box Shadow"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:657
-msgid "Palette"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:668
-msgid "Custom Shadow"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:679
-#: src/blocks/accordion/inspector.js:692
-#: src/blocks/accordion/inspector.js:760
-#: src/blocks/accordion/inspector.js:782
-#: src/blocks/accordion/inspector.js:1041
-#: src/blocks/accordion/inspector.js:1199
-#: src/blocks/accordion/inspector.js:1293
-#: src/blocks/accordion/inspector.js:1403
-msgid "Border Color"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:803
-msgid "Heading Text"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:848
-msgid "Subheading Text"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:917
-msgid "Size"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:925
-msgid "Icon Text Gap"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:974
-msgid "Body"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:1100
-msgid "Alignment"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:1109
-#: src/components/border-control/dimension.js:108
-#: src/constants/index.js:50
-msgid "Left"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:1113
-#: src/constants/index.js:71
-msgid "Center"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:1117
-#: src/components/border-control/dimension.js:84
-#: src/constants/index.js:93
-msgid "Right"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:1135
-msgid "Open All Button"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:1229
-msgid "Close All Button"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:1498
-msgid "Z-Index"
-msgstr ""
-
-#: src/blocks/accordion/inspector.js:1507
-msgid "Z-index property specifies the stack order of an element. An element with greater stack order is always in front of an element with a lower stack order."
-msgstr ""
-
-#: src/components/border-control/dimension.js:72
-#: src/constants/index.js:116
+#: src/blocks/accordion/inspector.js:532
+#: src/components/res-box-control/dimension.js:9
+#: src/constants/index.js:115
 msgid "Top"
 msgstr ""
 
-#: src/components/border-control/dimension.js:96
-#: src/constants/index.js:159
+#: src/blocks/accordion/inspector.js:536
+#: src/blocks/accordion/inspector.js:1262
+#: src/constants/index.js:70
+msgid "Center"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:540
+#: src/components/res-box-control/dimension.js:11
+#: src/constants/index.js:158
 msgid "Bottom"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:546
+msgid "Horizontal Position"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:555
+#: src/blocks/accordion/inspector.js:1258
+#: src/components/res-box-control/dimension.js:12
+#: src/constants/index.js:49
+msgid "Left"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:559
+#: src/blocks/accordion/inspector.js:1266
+#: src/components/res-box-control/dimension.js:10
+#: src/constants/index.js:92
+msgid "Right"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:567
+#: src/blocks/accordion/inspector.js:576
+#: src/blocks/accordion/inspector.js:1485
+#: src/blocks/patterns/index.js:190
+msgid "Load More"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:581
+msgid "Initial Visible Items"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:589
+msgid "3"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:593
+msgid "Loading Type"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:602
+msgid "All"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:606
+msgid "Step"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:613
+msgid "Load Per Click"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:632
+#: src/blocks/accordion/inspector.js:1598
+msgid "Instant Search"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:634
+msgid "Placeholder"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:643
+msgid "Not Found Text"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:698
+msgid "Style as Nested Accordion"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:705
+msgid "It allows you to override the style for nested accordions."
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:708
+msgid "Container"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:710
+msgid "Items Gap"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:718
+#: src/blocks/accordion/inspector.js:1001
+#: src/blocks/accordion/inspector.js:1162
+#: src/blocks/accordion/inspector.js:1272
+#: src/blocks/accordion/inspector.js:1529
+#: src/blocks/accordion/inspector.js:1655
+msgid "Margin"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:730
+msgid "Item"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:761
+msgid "Enable Box Shadow"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:772
+msgid "Shadow Preset"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:782
+msgid "A custom shadow is set below and overrides the preset."
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:790
+msgid "Custom Shadow"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:801
+#: src/blocks/accordion/inspector.js:814
+#: src/blocks/accordion/inspector.js:882
+#: src/blocks/accordion/inspector.js:904
+#: src/blocks/accordion/inspector.js:1190
+#: src/blocks/accordion/inspector.js:1353
+#: src/blocks/accordion/inspector.js:1452
+#: src/blocks/accordion/inspector.js:1566
+msgid "Border Color"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:925
+msgid "Heading Text"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:976
+#: src/blocks/accordion/inspector.js:1066
+#: src/components/typography/index.js:269
+msgid "Size"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:994
+msgid "Subheading Text"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:1074
+msgid "Icon Text Gap"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:1123
+msgid "Body"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:1249
+msgid "Alignment"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:1284
+msgid "Open All Button"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:1383
+msgid "Close All Button"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:1675
+msgid "Z-Index"
+msgstr ""
+
+#: src/blocks/accordion/inspector.js:1684
+msgid "Z-index property specifies the stack order of an element. An element with greater stack order is always in front of an element with a lower stack order."
+msgstr ""
+
+#: src/blocks/patterns/index.js:32
+msgid "Insert"
+msgstr ""
+
+#: src/blocks/patterns/index.js:49
+msgid "Requires Pro"
+msgstr ""
+
+#: src/blocks/patterns/index.js:49
+msgid "Insert Pattern"
+msgstr ""
+
+#: src/blocks/patterns/index.js:97
+msgid "Failed to load patterns. Please try again."
+msgstr ""
+
+#: src/blocks/patterns/index.js:131
+msgid "Accordion Patterns"
+msgstr ""
+
+#: src/blocks/patterns/index.js:138
+msgid "pattern"
+msgstr ""
+
+#: src/blocks/patterns/index.js:138
+msgid "patterns"
+msgstr ""
+
+#: src/blocks/patterns/index.js:148
+msgid "Fetch latest patterns"
+msgstr ""
+
+#: src/blocks/patterns/index.js:151
+msgid "Refresh"
+msgstr ""
+
+#: src/blocks/patterns/index.js:158
+msgid "Loading patterns…"
+msgstr ""
+
+#: src/blocks/patterns/index.js:165
+msgid "Retry"
+msgstr ""
+
+#: src/blocks/patterns/index.js:187
+msgid "Loading…"
 msgstr ""
 
 #: src/components/border-control/index.js:88
@@ -671,36 +1408,50 @@ msgid "Normal"
 msgstr ""
 
 #: src/components/border-control/index.js:195
-#: src/components/typography/index.js:381
+#: src/components/typography/index.js:304
 msgid "Style"
 msgstr ""
 
-#: src/components/boxshadow-control/index.js:54
-msgid "Reset"
-msgstr ""
-
-#: src/components/boxshadow-control/index.js:106
-msgid "Position"
-msgstr ""
-
-#: src/components/boxshadow-control/index.js:151
+#: src/components/boxshadow-control/index.js:32
 msgid "Horizontal"
 msgstr ""
 
-#: src/components/boxshadow-control/index.js:190
+#: src/components/boxshadow-control/index.js:33
 msgid "Vertical"
 msgstr ""
 
-#: src/components/boxshadow-control/index.js:229
+#: src/components/boxshadow-control/index.js:34
 msgid "Blur"
 msgstr ""
 
-#: src/components/boxshadow-control/index.js:267
+#: src/components/boxshadow-control/index.js:35
 msgid "Spread"
 msgstr ""
 
-#: src/components/buttons-group/index.js:43
-msgid "Pro"
+#: src/components/boxshadow-control/index.js:80
+msgid "Edit custom shadow"
+msgstr ""
+
+#: src/components/boxshadow-control/index.js:93
+#: src/components/typography/index.js:233
+msgid "Close"
+msgstr ""
+
+#: src/components/boxshadow-control/index.js:98
+msgid "Pick a color to show the shadow"
+msgstr ""
+
+#: src/components/boxshadow-control/index.js:103
+msgid "Position"
+msgstr ""
+
+#: src/components/color-control/index.js:42
+#: src/components/reset-button/index.js:20
+msgid "Reset"
+msgstr ""
+
+#: src/components/color-control/index.js:71
+msgid "Theme Colors"
 msgstr ""
 
 #: src/components/icon-picker/index.js:58
@@ -731,9 +1482,37 @@ msgstr ""
 msgid "Add sponsored rel"
 msgstr ""
 
+#: src/components/res-box-control/dimension.js:76
+msgid "Unlink sides"
+msgstr ""
+
+#: src/components/res-box-control/dimension.js:76
+msgid "Link sides"
+msgstr ""
+
+#: src/components/res-box-control/dimension.js:99
+#: src/components/res-box-control/dimension.js:112
+msgid "All sides"
+msgstr ""
+
+#. translators: %s: device name, e.g. Desktop
+#: src/components/res-btn/index.js:46
+#, js-format
+msgid "Editing for %s"
+msgstr ""
+
+#: src/components/res-btn/index.js:52
+msgid "Device"
+msgstr ""
+
+#: src/components/simple-sortable-item/index.js:13
+msgid "Delete"
+msgstr ""
+
 #: src/components/typography/constants.js:4
-#: src/components/typography/fontpicker/index.js:18
-#: src/components/typography/index.js:321
+#: src/components/typography/fontpicker/index.js:19
+#: src/components/typography/fontpicker/index.js:90
+#: src/components/typography/index.js:261
 msgid "Default"
 msgstr ""
 
@@ -805,44 +1584,111 @@ msgstr ""
 msgid "Oblique"
 msgstr ""
 
-#: src/components/typography/fontpicker/index.js:64
+#: src/components/typography/fontpicker/index.js:19
+msgid "Theme"
+msgstr ""
+
+#: src/components/typography/fontpicker/index.js:28
+msgid "System fonts"
+msgstr ""
+
+#: src/components/typography/fontpicker/index.js:32
+msgid "Google Fonts"
+msgstr ""
+
+#: src/components/typography/fontpicker/index.js:78
 msgid "Family"
 msgstr ""
 
-#: src/components/typography/fontpicker/index.js:83
-#: src/components/typography/fontpicker/index.js:84
-msgid "Font Family"
+#: src/components/typography/fontpicker/index.js:91
+msgid "No fonts found"
 msgstr ""
 
-#: src/components/typography/index.js:106
-msgid "Font Size"
+#: src/components/typography/fonts.js:26
+msgid "Sans serif"
 msgstr ""
 
-#: src/components/typography/index.js:309
+#: src/components/typography/fonts.js:27
+msgid "Serif"
+msgstr ""
+
+#: src/components/typography/fonts.js:28
+msgid "Display"
+msgstr ""
+
+#: src/components/typography/fonts.js:29
+msgid "Handwriting"
+msgstr ""
+
+#: src/components/typography/fonts.js:30
+msgid "Monospace"
+msgstr ""
+
+#: src/components/typography/index.js:27
+msgid "Thin"
+msgstr ""
+
+#: src/components/typography/index.js:28
+msgid "Extra Light"
+msgstr ""
+
+#: src/components/typography/index.js:29
+msgid "Light"
+msgstr ""
+
+#: src/components/typography/index.js:30
+msgid "Regular"
+msgstr ""
+
+#: src/components/typography/index.js:32
+msgid "Semi Bold"
+msgstr ""
+
+#: src/components/typography/index.js:33
+msgid "Bold"
+msgstr ""
+
+#: src/components/typography/index.js:34
+msgid "Extra Bold"
+msgstr ""
+
+#: src/components/typography/index.js:35
+msgid "Black"
+msgstr ""
+
+#: src/components/typography/index.js:210
+msgid "Edit typography"
+msgstr ""
+
+#: src/components/typography/index.js:247
+msgid "The quick brown fox"
+msgstr ""
+
+#: src/components/typography/index.js:257
 msgid "Weight"
 msgstr ""
 
-#: src/components/typography/index.js:336
-msgid "Decoration"
-msgstr ""
-
-#: src/components/typography/index.js:425
-msgid "Transform"
-msgstr ""
-
-#: src/components/typography/index.js:463
+#: src/components/typography/index.js:280
 msgid "Line Height"
 msgstr ""
 
-#: src/components/typography/index.js:684
+#: src/components/typography/index.js:291
 msgid "Letter Spacing"
 msgstr ""
 
-#: src/constants/index.js:17
+#: src/components/typography/index.js:310
+msgid "Transform"
+msgstr ""
+
+#: src/components/typography/index.js:316
+msgid "Decoration"
+msgstr ""
+
+#: src/constants/index.js:18
 msgid "Desktop"
 msgstr ""
 
-#: src/constants/index.js:26
+#: src/constants/index.js:27
 msgid "Tablet"
 msgstr ""
 
@@ -850,73 +1696,73 @@ msgstr ""
 msgid "Mobile"
 msgstr ""
 
-#: src/constants/index.js:137
+#: src/constants/index.js:136
 msgid "Middle"
 msgstr ""
 
-#: src/constants/index.js:184
+#: src/constants/index.js:183
 msgid "Outset"
 msgstr ""
 
-#: src/constants/index.js:188
+#: src/constants/index.js:187
 msgid "Inset"
 msgstr ""
 
-#: src/constants/index.js:196
+#: src/constants/index.js:195
 msgid "Solid"
 msgstr ""
 
-#: src/constants/index.js:205
+#: src/constants/index.js:204
 msgid "Dashed"
 msgstr ""
 
-#: src/constants/index.js:214
+#: src/constants/index.js:213
 msgid "Dotted"
 msgstr ""
 
-#: src/constants/index.js:231
-#: src/constants/index.js:243
+#: src/constants/index.js:230
+#: src/constants/index.js:242
 msgid "Classic"
 msgstr ""
 
-#: src/constants/index.js:235
-#: src/constants/index.js:247
+#: src/constants/index.js:234
+#: src/constants/index.js:246
 msgid "Gradient"
 msgstr ""
 
-#: src/constants/index.js:289
+#: src/constants/index.js:288
 msgid "H1"
 msgstr ""
 
-#: src/constants/index.js:293
+#: src/constants/index.js:292
 msgid "H2"
 msgstr ""
 
-#: src/constants/index.js:297
+#: src/constants/index.js:296
 msgid "H3"
 msgstr ""
 
-#: src/constants/index.js:301
+#: src/constants/index.js:300
 msgid "H4"
 msgstr ""
 
-#: src/constants/index.js:305
+#: src/constants/index.js:304
 msgid "H5"
 msgstr ""
 
-#: src/constants/index.js:309
+#: src/constants/index.js:308
 msgid "H6"
 msgstr ""
 
-#: src/constants/index.js:313
+#: src/constants/index.js:312
 msgid "Div"
 msgstr ""
 
-#: src/constants/index.js:317
+#: src/constants/index.js:316
 msgid "P"
 msgstr ""
 
-#: src/constants/index.js:321
+#: src/constants/index.js:320
 msgid "Span"
 msgstr ""
 

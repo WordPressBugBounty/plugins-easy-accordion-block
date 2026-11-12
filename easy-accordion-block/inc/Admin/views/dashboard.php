@@ -338,6 +338,15 @@ $esab_products = [
             </div>
         </section>
 
+        <?php
+        /**
+         * Fires in the dashboard sidebar, after the Pro card.
+         *
+         * @since 1.5.4
+         */
+        do_action( 'esab_dashboard_sidebar' );
+        ?>
+
         <section class="esab-card esab-card--list">
             <h2 class="esab-card__title"><?php esc_html_e( 'Need a hand?', 'easy-accordion-block' ); ?></h2>
             <ul class="esab-linklist">

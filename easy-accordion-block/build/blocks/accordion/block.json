@@ -1,7 +1,7 @@
 {
   "apiVersion": 3,
   "name": "esab/accordion",
-  "version": "0.1.0",
+  "version": "1.6.0",
   "title": "Accordion",
   "category": "esab-blocks",
   "description": "Easy Accordion allows you to create an accordion or faqs section easily.",

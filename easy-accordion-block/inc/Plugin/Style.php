@@ -73,9 +73,10 @@ if( ! class_exists( 'Esab_Style' ) ) {
                     return $block_content;
                 }
             
-                // Get the unique ID safely.
+                // Get the unique ID safely. It becomes a class selector, so anything
+                // beyond a plain identifier is rejected.
                 $unique_id = $attrs['uniqueId'] ?? '';
-                if ( empty( $unique_id ) ) {
+                if ( ! is_string( $unique_id ) || ! preg_match( '/^[A-Za-z0-9_-]+$/', $unique_id ) ) {
                     return $block_content;
                 }
             
@@ -83,7 +84,7 @@ if( ! class_exists( 'Esab_Style' ) ) {
 
                 if ( ! empty( $block_style ) ) {
                     $handle = 'esab-accordion-style-' . $unique_id;
-                    $this->render_inline_css( $handle, $block_style );
+                    $this->render_inline_css( $handle, $block_style, $unique_id );
                     return $block_content;
                 }
             
@@ -159,7 +160,7 @@ if( ! class_exists( 'Esab_Style' ) ) {
             
                 // Render the inline CSS.
                 $handle = 'esab-accordion-style-' . $unique_id;
-                $this->render_inline_css( $handle, $custom_css );
+                $this->render_inline_css( $handle, $custom_css, $unique_id );
             }
         
             return $block_content;
@@ -167,20 +168,26 @@ if( ! class_exists( 'Esab_Style' ) ) {
         /**
          * Render Inline CSS
         */
-        public function render_inline_css( $handle, $css ) {
+        public function render_inline_css( $handle, $css, $unique_id = '' ) {
+            // A block can render more than once per request (e.g. FAQ schema
+            // renders answers again); add its CSS only once.
+            if ( ! is_string( $css ) || wp_style_is( $handle, 'enqueued' ) ) {
+                return;
+            }
             wp_register_style( $handle, false, array(), ESAB_VERSION, 'all' );
             wp_enqueue_style( $handle, false, array(), ESAB_VERSION, 'all' );
-            wp_add_inline_style( $handle, $this->sanitize_css( $css ) );
+            wp_add_inline_style( $handle, $this->sanitize_css( $css, $unique_id ) );
         }
 
         /**
          * Sanitize CSS method
          *
          * @since 1.0.0
-         * @param string $css CSS to Sanitize.
+         * @param string $css       CSS to Sanitize.
+         * @param string $unique_id Block id every selector must be scoped to.
          * @return string
          */
-        private function sanitize_css( $css ) {
+        private function sanitize_css( $css, $unique_id = '' ) {
             // Validate UTF-8 encoding
             $css = wp_check_invalid_utf8( $css );
 
@@ -203,22 +210,120 @@ if( ! class_exists( 'Esab_Style' ) ) {
                 return '';
             }
 
-            // @import pulls in remote stylesheets; drop the at-rule, keep the rest.
-            $css = preg_replace( '/@import[^;]*;/i', '', $css );
-
-            // Filter declaration by declaration. A single disallowed property must
-            // not discard an entire block's styling, which is what returning ''
-            // from here used to do.
-            $css = preg_replace_callback(
-                '/\{([^{}]*)\}/',
-                function ( $matches ) {
-                    return '{' . $this->sanitize_declarations( $matches[1] ) . '}';
-                },
-                $css
-            );
+            // Rebuild the stylesheet rule by rule. Only rules scoped to this
+            // block survive, so a block cannot restyle the rest of the page, and
+            // at-rules other than conditional groups (@import, @font-face, ...)
+            // are dropped whether or not they end in a semicolon.
+            $css = $this->sanitize_rules( $css, $unique_id );
 
             // Trim and return
             return trim( $css );
+        }
+
+        /**
+         * Keep only well-formed rules scoped to the block.
+         *
+         * @since 1.6.0
+         * @param string $css       Stylesheet.
+         * @param string $unique_id Block id selectors must start with.
+         * @return string
+         */
+        private function sanitize_rules( $css, $unique_id ) {
+            $out = '';
+            $len = strlen( $css );
+            $pos = 0;
+
+            while ( $pos < $len ) {
+                $open = strpos( $css, '{', $pos );
+                if ( false === $open ) {
+                    break; // Trailing text outside any rule (e.g. a bare @import).
+                }
+
+                $prelude = trim( substr( $css, $pos, $open - $pos ) );
+                $close   = $this->matching_brace( $css, $open );
+                if ( false === $close ) {
+                    break; // Unbalanced: drop the rest.
+                }
+                $body = substr( $css, $open + 1, $close - $open - 1 );
+                $pos  = $close + 1;
+
+                // A stray "}" or text before the prelude (e.g. "@import x;") is
+                // carried in $prelude; keep only what follows the last ";" or "}".
+                $prelude = trim( preg_replace( '/^.*[;}]/s', '', $prelude ) );
+
+                if ( '' === $prelude ) {
+                    continue;
+                }
+
+                if ( '@' === $prelude[0] ) {
+                    if ( preg_match( '/^@(media|supports|container)\b/i', $prelude ) && ! preg_match( '/url\s*\(/i', $prelude ) ) {
+                        $inner = $this->sanitize_rules( $body, $unique_id );
+                        if ( '' !== $inner ) {
+                            $out .= $prelude . '{' . $inner . '}';
+                        }
+                    }
+                    continue;
+                }
+
+                if ( ! $this->is_scoped_selector( $prelude, $unique_id ) ) {
+                    continue;
+                }
+
+                $declarations = $this->sanitize_declarations( $body );
+                if ( '' !== $declarations ) {
+                    $out .= $prelude . '{' . $declarations . '}';
+                }
+            }
+
+            return $out;
+        }
+
+        /**
+         * Position of the brace closing the one at $open, or false.
+         *
+         * @since 1.6.0
+         * @param string $css  Stylesheet.
+         * @param int    $open Offset of an opening brace.
+         * @return int|false
+         */
+        private function matching_brace( $css, $open ) {
+            $depth = 0;
+            $len   = strlen( $css );
+            for ( $i = $open; $i < $len; $i++ ) {
+                if ( '{' === $css[ $i ] ) {
+                    ++$depth;
+                } elseif ( '}' === $css[ $i ] ) {
+                    --$depth;
+                    if ( 0 === $depth ) {
+                        return $i;
+                    }
+                }
+            }
+            return false;
+        }
+
+        /**
+         * Whether every selector in a list targets this block.
+         *
+         * @since 1.6.0
+         * @param string $selectors Comma-separated selector list.
+         * @param string $unique_id Block id.
+         * @return bool
+         */
+        private function is_scoped_selector( $selectors, $unique_id ) {
+            if ( '' === $unique_id ) {
+                return false;
+            }
+
+            $scope = '/^\.' . preg_quote( $unique_id, '/' ) . '(?![A-Za-z0-9_-])/';
+
+            foreach ( explode( ',', $selectors ) as $selector ) {
+                if ( ! preg_match( $scope, trim( $selector ) ) ) {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         /**

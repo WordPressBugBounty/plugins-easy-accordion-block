@@ -568,3 +568,13 @@ class Esab_Admin {
 }
 
 Esab_Admin::instance(); // Initialize the class
+
+// Cartlet recommendation in the dashboard sidebar (WooCommerce sites only).
+if ( is_admin() ) {
+    require_once ESAB_PATH . 'inc/Admin/Cartlet_Card.php';
+    ( new Esab_Cartlet_Card(
+        'settings_page_' . Esab_Admin::PAGE_SLUG,
+        ESAB_URL . 'inc/Admin/images/cartlet.png',
+        'esab_dashboard_sidebar'
+    ) )->register();
+}

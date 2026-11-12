@@ -73,6 +73,9 @@ if( ! class_exists( 'Esab_Enqueue' ) ) {
                     ESAB_VERSION
                 );
 
+                // Most editor strings (controls, panels) live in this bundle.
+                wp_set_script_translations( 'esab-modules', 'easy-accordion-block', ESAB_PATH . 'languages' );
+
                 wp_localize_script( 'esab-modules', 'esabData', [
                     'hasPro'   => class_exists( 'Esabp_Accordion_Block_Pro' ) ? true : false,
                     'features' => class_exists( 'Esab_Settings' ) ? Esab_Settings::all() : [],
@@ -91,6 +94,8 @@ if( ! class_exists( 'Esab_Enqueue' ) ) {
                     $gasset['version'],
                     false
                 );
+
+                wp_set_script_translations( 'esab-editor-global', 'easy-accordion-block', ESAB_PATH . 'languages' );
 
                 wp_enqueue_style(
                     'esab-editor-global',

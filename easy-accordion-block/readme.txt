@@ -3,7 +3,7 @@ Contributors: binsaifullah
 Tags: accordion, faq, faqs, accordion block, collapsible content
 Requires at least: 6.6
 Tested up to: 7.1
-Stable tag: 1.5.3
+Stable tag: 1.6.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -79,6 +79,10 @@ The free plugin covers everyday accordions and FAQs. [Easy Accordion Block Pro](
 * **Disable specific items** – lock an item so it cannot be opened on the front end.
 * **Custom icons** – upload your own SVG or image instead of using the built-in set.
 * **Unfold block** – fold long content behind a Show More / Show Less button.
+
+= From the same team =
+
+[Cartlet](https://wordpress.org/plugins/cartlet/) – share, save and track WooCommerce carts. Shoppers send their cart as a link, QR code or WhatsApp message, and can save it for later.
 
 == Installation ==
 
@@ -164,6 +168,22 @@ Yes. The interface uses Gutenberg's own components, so it behaves like the rest 
 7. Starting from a premade pattern.
 
 == Changelog ==
+
+= 1.6.0 =
+* New: Redesigned block controls — spacing (margin, padding, radius, border width) with a linked slider, typography panel with font search and live preview, visual shadow presets, and a rebuilt custom shadow panel
+* New: Device switcher uses the same icons as the editor's preview menu
+* New: Sidebar panels open one at a time, and remember where you were
+* New: Fresh starting screen when you insert the block — browse patterns or start from scratch
+* New: Google Fonts are served from your own site by default (no requests to Google), in one stylesheet with only the weights you use. Filter: esab_local_google_fonts
+* New: Public JavaScript API (window.esabAccordion) and an esab:ready event for developers
+* Improved: Fonts you pick now show in the editor canvas and stay loaded when you reopen a post
+* Improved: Editor text can now be translated
+* Fixed: Changing the unit on one device reset the other devices' units
+* Fixed: Resetting a value on Mobile did not clear it
+* Fixed: Posts were marked as changed as soon as they were opened in the editor
+* Fixed: Shadow presets did not show in the editor
+* Security: Block styles are now limited to the block itself
+* Changed: FAQ schema and deep linking are now provided by Easy Accordion Block Pro 2.1.0 or later. Your saved settings are kept
 
 = 1.5.3 =
 * Added (Pro): Schema Markup — output FAQPage structured data per accordion, right from the block's own sidebar
@@ -279,6 +299,9 @@ Yes. The interface uses Gutenberg's own components, so it behaves like the rest 
 * Initial Release
 
 == Upgrade Notice ==
+
+= 1.6.0 =
+Redesigned block controls, self-hosted Google Fonts and several editor fixes. If you use FAQ schema or deep linking, update Easy Accordion Block Pro to 2.1.0 as well. Your saved content is not changed.
 
 = 1.5.3 =
 Adds two Pro features: Schema Markup (per-accordion FAQPage structured data) and Deep Linking (shareable per-item anchors). Both now live in the block's own sidebar instead of the global Settings page. Your saved content is not changed.
